@@ -32,8 +32,20 @@
   body {
     font-family: "Spline Sans Mono", sans-serif;
   }
+}
 
-  .bold-text {
+@layer components {
+  .page {
+    --content-side-padding: 1rem;
+
+    & .section-padding {
+      padding-inline: var(--content-side-padding);
+    }
+  }
+}
+
+@layer utilities {
+  .font-bold-condensed {
     font-family: "Sofia Sans Condensed";
     font-weight: bold;
   }

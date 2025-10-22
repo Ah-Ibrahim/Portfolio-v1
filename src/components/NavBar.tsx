@@ -6,9 +6,12 @@ function NavBar() {
 
   return (
     <>
-      <header className="fixed w-full mix-blend-exclusion z-10">
-        <nav className="flex justify-between px-4 py-6 items-center text-white *:uppercase">
-          <a href="#" className="w-min bold-text text-2xl leading-[0.75] ">
+      <header className="fixed w-full mix-blend-exclusion z-20">
+        <nav className="flex justify-between section-padding py-6 items-center text-white *:uppercase">
+          <a
+            href="#"
+            className="w-min font-bold-condensed text-2xl leading-[0.75] "
+          >
             Ahmed Ibrahim
           </a>
           <a

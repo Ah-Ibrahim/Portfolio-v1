@@ -10,14 +10,14 @@ function HamburgerMenu() {
   return (
     <nav
       aria-label="Main navigation"
-      className="bg-white fixed inset-0 w-full h-full pt-19.5 px-4 flex flex-col pb-2"
+      className="bg-white fixed inset-0 w-full h-full pt-19.5 flex flex-col pb-2 section-padding z-10"
     >
       {/* TODO: Add dynamic time zone and time */}
       <div className="font-light text-xs text-right uppercase tracking-widest">
         <div>Alexandria, Egypt:</div>
         <div>(GMT+3) 18:42</div>
       </div>
-      <ul className="uppercase text-5xl bold-text space-y-3 my-auto tracking-tighter">
+      <ul className="uppercase text-5xl font-bold-condensed space-y-3 my-auto tracking-tighter">
         <li>
           <a href="#">About me</a>
         </li>
@@ -51,8 +51,11 @@ function HamburgerMenu() {
             </a>,
           ]}
         />
-        <div className="text-center bold-text text-2xl">
-          <a href="mailto:ahmed.ibrahim.elsayed01@gmail.com">
+        <div className="text-center font-bold-condensed text-2xl">
+          <a
+            href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
+            className="underline"
+          >
             ahmed.ibrahim.elsayed01@gmail.com
           </a>
         </div>
