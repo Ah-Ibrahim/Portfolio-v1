@@ -6,7 +6,7 @@ function NavBar() {
         <a href="#" className="w-min bold-text text-2xl leading-[0.75] ">
           Ahmed Ibrahim
         </a>
-        <a href="#" className="font-light">
+        <a href="#" className="font-extralight">
           Menu<sup>+</sup>
         </a>
       </nav>
