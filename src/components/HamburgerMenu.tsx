@@ -9,6 +9,8 @@ function HorizontalLinks({ links }: { links: ReactNode[] }) {
 
 function HamburgerMenu() {
   const ref = useRef<HTMLDivElement>(null);
+  const initialTime = createTimeObject().getTime();
+  const initialTimeZone = createTimeObject().getTimeZone();
 
   const onUpdate = useEffectEvent((timeObject: TimeObject) => {
     const element = ref.current!;
@@ -38,7 +40,9 @@ function HamburgerMenu() {
     >
       <div className="font-light text-xs text-right uppercase tracking-widest">
         <div>Alexandria, Egypt:</div>
-        <div ref={ref}>(GMT+0) 00:00</div>
+        <div ref={ref}>
+          ({initialTimeZone}) {initialTime}
+        </div>
       </div>
       <ul className="uppercase text-5xl font-bold-condensed space-y-3 my-auto tracking-tighter">
         <li>
