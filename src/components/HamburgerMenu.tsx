@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { useEffect, useEffectEvent, useRef, type ReactNode } from "react";
+import { createTimeObject, type TimeObject } from "../utils/time";
 
 function HorizontalLinks({ links }: { links: ReactNode[] }) {
   const items = links.map((item, index) => <li key={index}>{item}</li>);
@@ -7,15 +8,37 @@ function HorizontalLinks({ links }: { links: ReactNode[] }) {
 }
 
 function HamburgerMenu() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const onUpdate = useEffectEvent((timeObject: TimeObject) => {
+    const element = ref.current!;
+
+    const time = timeObject.getTime();
+    const zone = timeObject.getTimeZone();
+
+    element.textContent = `(${zone}) ${time}`;
+  });
+
+  useEffect(() => {
+    const timeObject = createTimeObject();
+
+    const id = setInterval(() => {
+      onUpdate(timeObject);
+    }, 1000);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, []);
+
   return (
     <nav
       aria-label="Main navigation"
       className="bg-white fixed inset-0 w-full h-full pt-19.5 flex flex-col pb-2 section-padding z-10"
     >
-      {/* TODO: Add dynamic time zone and time */}
       <div className="font-light text-xs text-right uppercase tracking-widest">
         <div>Alexandria, Egypt:</div>
-        <div>(GMT+3) 18:42</div>
+        <div ref={ref}>(GMT+0) 00:00</div>
       </div>
       <ul className="uppercase text-5xl font-bold-condensed space-y-3 my-auto tracking-tighter">
         <li>
