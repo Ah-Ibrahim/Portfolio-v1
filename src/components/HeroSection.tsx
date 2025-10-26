@@ -1,4 +1,5 @@
 import imageUrl from "../assets/images/personal-image.jpeg";
+import ArrowIcon from "./ArrowSvg";
 
 function HeroSection() {
   return (
@@ -27,16 +28,8 @@ function HeroSection() {
         className="flex flex-col items-center mt-25"
       >
         <div className="w-max">
-          <span className=" uppercase font-light flex">
-            Available for collaboration
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="aspect-square w-[17px]"
-            >
-              <path d="M4.2216 5.63589L5.63562 4.22168L17.0709 15.6569V10.0712H19.0709L19.0709 19.0712L10.0709 19.0712L10.0709 17.0712L15.6567 17.0712L4.2216 5.63589Z"></path>
-            </svg>
+          <span className=" uppercase font-light flex gap-x-1">
+            Available for collaboration <ArrowIcon />
           </span>
         </div>
         {/* TODO: hover animation needs after and before underline instead of this   */}
