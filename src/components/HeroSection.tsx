@@ -2,7 +2,7 @@ import imageUrl from "../assets/images/personal-image.jpeg";
 
 function HeroSection() {
   return (
-    <section className="bg-bg-primary h-screen pt-23 section-padding">
+    <section className="bg-bg-primary pt-23 section-padding">
       <div className="px-4">
         <h1 className="text-[5.25rem] font-bold-condensed uppercase tracking-tighter leading-[0.75] text-right">
           Creative Developer
@@ -44,6 +44,9 @@ function HeroSection() {
           ahmed.ibrahim.elsayed01@gmail.com
         </div>
       </a>
+      <div className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center mt-10">
+        About me
+      </div>
     </section>
   );
 }
