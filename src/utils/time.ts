@@ -14,20 +14,8 @@ export function createTimeObject(): TimeObject {
     hour12: false,
   });
   let parts = formatter.formatToParts(new Date());
-  let intervalId: number;
 
   return {
-    // updateTime(callback: () => void) {
-    //   if (intervalId) throw Error("Already updating time");
-
-    //   intervalId = setInterval(() => {
-    //     parts = formatter.formatToParts(new Date());
-    //     callback();
-    //   }, 1000);
-    // },
-    // stopUpdateTime() {
-    //   clearInterval(intervalId);
-    // },
     getTime(): string {
       parts = formatter.formatToParts(new Date());
       const time = parts
