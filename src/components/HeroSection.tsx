@@ -1,5 +1,5 @@
 import imageUrl from "../assets/images/personal-image.jpeg";
-import ArrowIcon from "./ArrowSvg";
+import ArrowIcon from "./ArrowIcon";
 
 function HeroSection() {
   return (
