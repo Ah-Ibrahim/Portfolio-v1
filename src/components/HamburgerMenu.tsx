@@ -33,6 +33,14 @@ function HamburgerMenu() {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
     <nav
       aria-label="Main navigation"
