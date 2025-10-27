@@ -1,5 +1,5 @@
-import { useEffect, useEffectEvent, useRef, type ReactNode } from "react";
-import { createTimeObject, type TimeObject } from "../utils/time";
+import { useEffect, useState, type ReactNode } from "react";
+import { createTimeObject } from "../utils/time";
 
 function HorizontalLinks({ links }: { links: ReactNode[] }) {
   const items = links.map((item, index) => <li key={index}>{item}</li>);
@@ -8,29 +8,16 @@ function HorizontalLinks({ links }: { links: ReactNode[] }) {
 }
 
 function HamburgerMenu() {
-  const ref = useRef<HTMLDivElement>(null);
-  const initialTime = createTimeObject().getTime();
-  const initialTimeZone = createTimeObject().getTimeZone();
-
-  const onUpdate = useEffectEvent((timeObject: TimeObject) => {
-    const element = ref.current!;
-
-    const time = timeObject.getTime();
-    const zone = timeObject.getTimeZone();
-
-    element.textContent = `(${zone}) ${time}`;
-  });
+  const [time, setTime] = useState<string>(createTimeObject().getTime());
+  const timeZone = createTimeObject().getTimeZone();
 
   useEffect(() => {
     const timeObject = createTimeObject();
-
     const id = setInterval(() => {
-      onUpdate(timeObject);
+      setTime(timeObject.getTime());
     }, 1000);
 
-    return () => {
-      clearInterval(id);
-    };
+    return () => clearInterval(id);
   }, []);
 
   useEffect(() => {
@@ -48,8 +35,8 @@ function HamburgerMenu() {
     >
       <div className="font-light text-xs text-right uppercase tracking-widest">
         <div>Alexandria, Egypt:</div>
-        <div ref={ref}>
-          ({initialTimeZone}) {initialTime}
+        <div>
+          ({timeZone}) {time}
         </div>
       </div>
       <ul className="uppercase text-5xl font-bold-condensed space-y-3 my-auto tracking-tighter">
