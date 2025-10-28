@@ -1,3 +1,4 @@
+import AboutMe from "../components/AboutMe";
 import HeroSection from "../components/HeroSection";
 import NavBar from "../components/NavBar";
 
@@ -6,6 +7,7 @@ function HomePage() {
     <div className="page">
       <NavBar />
       <HeroSection />
+      <AboutMe />
     </div>
   );
 }
