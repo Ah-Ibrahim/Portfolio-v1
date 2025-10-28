@@ -37,9 +37,10 @@ function HeroSection() {
           ahmed.ibrahim.elsayed01@gmail.com
         </div>
       </a>
-      <div className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center mt-10">
+      {/* NOTE: Maybe About me should be added to About me section */}
+      <h2 className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center mt-10">
         About me
-      </div>
+      </h2>
     </section>
   );
 }
