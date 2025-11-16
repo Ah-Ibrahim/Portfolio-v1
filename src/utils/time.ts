@@ -13,14 +13,13 @@ export function createTimeObject(): TimeObject {
     timeZoneName: "short",
     hour12: false,
   });
-  let parts = formatter.formatToParts(new Date());
 
   return {
     getTime(): string {
-      parts = formatter.formatToParts(new Date());
+      const parts = formatter.formatToParts(new Date());
       const time = parts
         .filter(
-          (p) => p.type === "hour" || p.type === "minute" || p.value === ":"
+          (p) => p.type === "hour" || p.type === "minute" || p.value === ":",
         )
         .map((p) => p.value)
         .join("");
@@ -28,7 +27,7 @@ export function createTimeObject(): TimeObject {
       return time;
     },
     getTimeZone(): string {
-      parts = formatter.formatToParts(new Date());
+      const parts = formatter.formatToParts(new Date());
       const zone = parts.find((p) => p.type === "timeZoneName")?.value || "";
       return zone;
     },
