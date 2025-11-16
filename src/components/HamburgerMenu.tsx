@@ -7,12 +7,13 @@ function HorizontalLinks({ links }: { links: ReactNode[] }) {
   return <ul className="flex justify-between">{items}</ul>;
 }
 
+const timeObject = createTimeObject();
+
 function HamburgerMenu() {
-  const [time, setTime] = useState<string>(createTimeObject().getTime());
-  const timeZone = createTimeObject().getTimeZone();
+  const [time, setTime] = useState<string>(timeObject.getTime());
+  const timeZone = timeObject.getTimeZone();
 
   useEffect(() => {
-    const timeObject = createTimeObject();
     const id = setInterval(() => {
       setTime(timeObject.getTime());
     }, 1000);
@@ -53,7 +54,6 @@ function HamburgerMenu() {
           <a href="#">Connect</a>
         </li>
       </ul>
-
       <div className="space-y-4 mt-auto">
         <HorizontalLinks
           links={[
