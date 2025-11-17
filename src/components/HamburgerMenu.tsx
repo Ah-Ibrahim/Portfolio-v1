@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { createTimeObject } from "../utils/time";
+import { createTimeObject } from "@/utils/time";
 
 function HorizontalLinks({ links }: { links: ReactNode[] }) {
   const items = links.map((item, index) => <li key={index}>{item}</li>);
