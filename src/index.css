@@ -15,12 +15,13 @@
   --color-primary: #101010;
   --color-secondary: #a9a9a9;
   --color-neutral-white: #f7f7f7;
-  --color-accent-gray: #f1f1f1;
+  --color-neutral-gray: #f1f1f1;
+  --color-dark-gray: #d9d9d9;
 
   /* Background */
   --color-bg-primary: var(--color-neutral-white);
   --color-bg-secondary: var(--color-primary);
-  --color-bg-accent: var(--color-accent-gray);
+  --color-bg-accent: var(--color-neutral-gray);
 
   /* Text */
   --color-text-primary: var(--color-primary);

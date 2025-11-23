@@ -12,7 +12,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
   const items = projects.map((project, index) => (
     <div
       key={project.id}
-      className={`border-b border-accent-gray px-4 space-y-6 py-2 ${
+      className={`border-b border-dark-gray px-4 space-y-6 py-2 ${
         selectedId === project.id ? "bg-white" : ""
       }`}
     >
