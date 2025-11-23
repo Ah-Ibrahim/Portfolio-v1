@@ -37,7 +37,11 @@ function Projects({ projects }: { projects: ProjectType[] }) {
             </figure>
           </div>
           <div className="text-center underline">
-            <a href={project.previewLink} className="text-[#4438ca] uppercase ">
+            <a
+              href={project.previewLink}
+              className="uppercase"
+              style={{ color: project.colorTheme }}
+            >
               Preview
             </a>
           </div>
