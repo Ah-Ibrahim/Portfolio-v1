@@ -19,7 +19,7 @@ export function createTimeObject(): TimeObject {
       const parts = formatter.formatToParts(new Date());
       const time = parts
         .filter(
-          (p) => p.type === "hour" || p.type === "minute" || p.value === ":",
+          (p) => p.type === "hour" || p.type === "minute" || p.value === ":"
         )
         .map((p) => p.value)
         .join("");
