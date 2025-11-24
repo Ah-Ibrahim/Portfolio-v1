@@ -19,3 +19,12 @@ export const ProjectSchema = z
   .transform((obj) => ({ ...obj, id: nanoid() }));
 
 export type ProjectType = z.infer<typeof ProjectSchema>;
+
+export interface AccordionPanelData {
+  id: string;
+  title: string;
+  description: string;
+  imageLink: string;
+  previewLink?: string;
+  colorTheme?: string;
+}
