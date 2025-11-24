@@ -1,7 +1,7 @@
-import AboutMe from "@/components/AboutMe";
-import HeroSection from "@/components/HeroSection";
-import NavBar from "@/components/NavBar";
-import Projects from "@/components/Projects";
+import NavBar from "@/components/layout/NavBar";
+import AboutMe from "@/features/about/AboutMe";
+import HeroSection from "@/features/hero/HeroSection";
+import Projects from "@/features/projects/Projects";
 
 function HomePage() {
   return (

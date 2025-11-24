@@ -1,4 +1,4 @@
-import AccordionPanel from "@/components/AccordionPanel";
+import AccordionPanel from "@/components/common/AccordionPanel";
 import type { AccordionPanelData } from "@/lib/schemas/definitions";
 import { useState } from "react";
 

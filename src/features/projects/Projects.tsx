@@ -1,4 +1,4 @@
-import Accordion from "@/components/Accordion";
+import Accordion from "@/components/common/Accordion";
 import ProjectsData from "@/data/projects.json";
 import { ProjectSchema, type ProjectType } from "@/lib/schemas/definitions";
 import z from "zod";

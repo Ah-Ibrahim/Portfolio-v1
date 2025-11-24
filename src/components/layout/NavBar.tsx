@@ -1,5 +1,5 @@
+import HamburgerMenu from "@/components/layout/HamburgerMenu";
 import { useState } from "react";
-import HamburgerMenu from "@/components/HamburgerMenu";
 
 function NavBar() {
   const [isMenuShown, setIsMenuShown] = useState<boolean>(false);

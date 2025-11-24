@@ -1,5 +1,5 @@
 import imageUrl from "@/assets/images/personal-image.jpeg";
-import ArrowIcon from "@/components/ArrowIcon";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 function HeroSection() {
   return (
