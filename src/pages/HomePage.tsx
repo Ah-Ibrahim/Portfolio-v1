@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import AboutMe from "@/features/about/AboutMe";
 import Contact from "@/features/contact/Contact";
@@ -14,6 +15,7 @@ function HomePage() {
 			<Projects />
 			<Services />
 			<Contact />
+			<Footer />
 		</div>
 	);
 }
