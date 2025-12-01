@@ -18,7 +18,17 @@ export const ProjectSchema = z
   })
   .transform((obj) => ({ ...obj, id: nanoid() }));
 
+export const ServiceSchema = z
+	.object({
+		title: z.string(),
+		description: z.string(),
+		imageLink: z.url(),
+		keywords: z.array(z.string()),
+	})
+	.transform((obj) => ({ ...obj, id: nanoid() }));
+
 export type ProjectType = z.infer<typeof ProjectSchema>;
+export type ServiceType = z.infer<typeof ServiceSchema>;
 
 export interface AccordionPanelData {
   id: string;
@@ -27,4 +37,5 @@ export interface AccordionPanelData {
   imageLink: string;
   previewLink?: string;
   colorTheme?: string;
+	keywords?: string[];
 }
