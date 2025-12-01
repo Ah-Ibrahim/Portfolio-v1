@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Single Page Applications",
+        "description": "I build modern, fast, and smooth React applications that feel like real software — not static websites. From routing to component structure, I make sure everything is clean, scalable, and easy to maintain as the project grows.",
+        "imageLink": "https://raw.githubusercontent.com/Ah-Ibrahim/Marketing-landing-page/refs/heads/main/designs/Preview.jpg",
+        "keywords": [
+            "React SPA",
+            "Routing",
+            "Reuseable Components"
+        ]
+    },
+    {
+        "title": "UI/UX Implementation",
+        "description": "Give me a design, and I’ll turn it into a polished, pixel-accurate interface. I focus on clean layouts, proper spacing, consistent styling, and the small visual details that make users trust your product.",
+        "imageLink": "https://github.com/Ah-Ibrahim/Ecommerce-product-page/raw/main/design/desktop-preview.jpg",
+        "keywords": [
+            "Figma to React",
+            "Pixel-Perfect UI"
+        ]
+    },
+    {
+        "title": "Responsive Web Development",
+        "description": "Your website should look great on every screen — mobile, tablet, or desktop. I build layouts that adapt smoothly, maintaining usability and visual consistency no matter what device your users pick up.",
+        "imageLink": "https://github.com/Ah-Ibrahim/Desserts-list-with-cart/raw/main/design/desktop-design-selected.jpg",
+        "keywords": [
+            "Mobile-First Approach",
+            "Adaptive Design",
+            "Responsive Layout"
+        ]
+    },
+    {
+        "title": "Performance Optimization",
+        "description": "A responsive dessert ordering website with a smooth shopping experience and performance optimizations.",
+        "imageLink": "https://github.com/Ah-Ibrahim/Desserts-list-with-cart/raw/main/design/desktop-design-selected.jpg",
+        "keywords": [
+            "Lazy Loading",
+            "Efficient Rendering",
+            "Lighthouse improvements"
+        ]
+    },
+    {
+        "title": "API Integration",
+        "description": "I connect your frontend to real data using clean and reliable API integration. Whether it’s fetching, filtering, or updating data, I make sure everything works smoothly and handles errors gracefully.",
+        "imageLink": "https://github.com/Ah-Ibrahim/Desserts-list-with-cart/raw/main/design/desktop-design-selected.jpg",
+        "keywords": [
+            "RESTs API",
+            "React Query",
+            "Data Fetching"
+        ]
+    }
+]
