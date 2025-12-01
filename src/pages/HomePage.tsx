@@ -1,8 +1,9 @@
-import NavBar from '@/components/layout/NavBar';
-import AboutMe from '@/features/about/AboutMe';
-import HeroSection from '@/features/hero/HeroSection';
-import Projects from '@/features/projects/Projects';
-import Services from '@/features/services/Services';
+import NavBar from "@/components/layout/NavBar";
+import AboutMe from "@/features/about/AboutMe";
+import Contact from "@/features/contact/Contact";
+import HeroSection from "@/features/hero/HeroSection";
+import Projects from "@/features/projects/Projects";
+import Services from "@/features/services/Services";
 
 function HomePage() {
 	return (
@@ -12,6 +13,7 @@ function HomePage() {
 			<AboutMe />
 			<Projects />
 			<Services />
+			<Contact />
 		</div>
 	);
 }
