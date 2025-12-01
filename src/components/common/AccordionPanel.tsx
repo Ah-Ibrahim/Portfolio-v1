@@ -55,7 +55,8 @@ function AccordionPanel({
 							<a
 								href={previewLink}
 								className="uppercase"
-								style={{ color: colorTheme }}>
+								style={{ color: colorTheme }}
+								target="_blank">
 								Preview
 							</a>
 						</div>
