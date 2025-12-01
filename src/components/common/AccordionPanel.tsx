@@ -44,8 +44,15 @@ function AccordionPanel({
 			</div>
 			{isSelected && (
 				<>
-					<div className="flex *:flex-1">
-						{keywords && <ul>{keywordsItems}</ul>}
+					<div
+						className={`flex *:flex-1 ${
+							index % 2 ? "flex-row-reverse" : ""
+						}`}>
+						{keywords && (
+							<ul className={`${index % 2 ? "*:ms-2" : ""}`}>
+								{keywordsItems}
+							</ul>
+						)}
 						<figure>
 							<img src={imageLink} alt={title} />
 						</figure>
