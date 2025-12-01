@@ -1,8 +1,11 @@
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import { useForm, ValidationError } from "@formspree/react";
+import { useRef } from "react";
 
 function ContactForm() {
 	const [state, handleSubmit] = useForm("mldqnezb");
+	const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
+
 	if (state.succeeded) {
 		return (
 			<p className="uppercase font-bold-condensed my-6 text-center text-3xl">
@@ -10,6 +13,16 @@ function ContactForm() {
 			</p>
 		);
 	}
+
+	const handleChange = () => {
+		const textAreaElement = textAreaRef.current;
+
+		if (!textAreaElement) return;
+
+		textAreaElement.style.height = "auto";
+		textAreaElement.style.height = `${textAreaElement.scrollHeight}px`;
+	};
+
 	return (
 		<form onSubmit={handleSubmit} className="flex flex-col py-6">
 			<input
@@ -45,6 +58,11 @@ function ContactForm() {
 				name="message"
 				placeholder="How can I help you?*"
 				className="border-b placeholder:uppercase py-2 resize-none mt-8"
+				ref={textAreaRef}
+				onChange={handleChange}
+				style={{
+					scrollbarWidth: "none",
+				}}
 			/>
 			<div className="text-red-500 mt-1">
 				<ValidationError
