@@ -38,3 +38,8 @@ export interface AccordionPanelData {
 	colorTheme?: string;
 	keywords?: string[];
 }
+
+export interface link {
+	text: string;
+	href: string;
+}
