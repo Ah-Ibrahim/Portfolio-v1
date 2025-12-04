@@ -6,16 +6,16 @@ import z from "zod";
 let projects: ProjectType[];
 
 try {
-  projects = z.array(ProjectSchema).parse(ProjectsData);
+	projects = z.array(ProjectSchema).parse(ProjectsData);
 } catch (error) {
-  console.error("Failed to parse recentProjects.json", error);
+	console.error("Failed to parse recentProjects.json", error);
 }
 
 function Projects() {
-  return (
-    <section className="bg-bg-primary pt-12">
-      <Accordion panelsData={projects} />
-    </section>
-  );
+	return (
+		<section className="bg-bg-primary pt-8 pb-10">
+			<Accordion panelsData={projects} />
+		</section>
+	);
 }
 export default Projects;

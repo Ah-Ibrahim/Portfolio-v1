@@ -1,8 +1,8 @@
-import ContactForm from "./ContactForm";
+import ContactForm from "@/features/contact/ContactForm";
 
 function Contact() {
 	return (
-		<section className="section-padding bg-bg-primary space-y-4">
+		<section className="section-padding bg-bg-primary space-y-4 py-10">
 			<div className="text-center tracking-[-0.2em] uppercase">
 				<div className="font-bold-condensed tracking-tighter">
 					Let's start the conversation
