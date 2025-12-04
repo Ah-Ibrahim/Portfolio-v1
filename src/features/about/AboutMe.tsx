@@ -3,8 +3,11 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 
 function AboutMe() {
 	return (
-		<section className="bg-bg-secondary text-white section-padding pt-17 pb-6">
-			<div className="uppercase text-lg">About me</div>
+		<section className="bg-bg-secondary text-white section-padding pt-10 pb-6">
+			<div className="uppercase text-lg flex justify-between mb-6 font-bold-condensed">
+				<div>2/5</div>
+				<div>DSGN/2</div>
+			</div>
 			<div className="w-46 mx-auto mt-1 space-y-6">
 				<img
 					className="w-full"
