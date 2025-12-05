@@ -1,53 +1,61 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Spline Sans Mono";
-  src: url("./assets/fonts/Spline_Sans_Mono/SplineSansMono-VariableFont_wght.ttf");
+	font-family: "Spline Sans Mono";
+	src: url("./assets/fonts/Spline_Sans_Mono/SplineSansMono-VariableFont_wght.ttf");
 }
 
 @font-face {
-  font-family: "Sofia Sans Condensed";
-  src: url("./assets/fonts/Sofia_Sans_Condensed/SofiaSansCondensed-VariableFont_wght.ttf");
+	font-family: "Sofia Sans Condensed";
+	src: url("./assets/fonts/Sofia_Sans_Condensed/SofiaSansCondensed-VariableFont_wght.ttf");
 }
 
 @theme {
-  /* Colors */
-  --color-primary: #101010;
-  --color-secondary: #a9a9a9;
-  --color-neutral-white: #f7f7f7;
-  --color-neutral-gray: #f1f1f1;
-  --color-dark-gray: #d9d9d9;
+	/* Colors */
+	--color-primary: #101010;
+	--color-secondary: #a9a9a9;
+	--color-neutral-white: #f7f7f7;
+	--color-neutral-gray: #f1f1f1;
+	--color-dark-gray: #d9d9d9;
 
-  /* Background */
-  --color-bg-primary: var(--color-neutral-white);
-  --color-bg-secondary: var(--color-primary);
-  --color-bg-accent: var(--color-neutral-gray);
+	/* Background */
+	--color-bg-primary: var(--color-neutral-white);
+	--color-bg-secondary: var(--color-primary);
+	--color-bg-accent: var(--color-neutral-gray);
 
-  /* Text */
-  --color-text-primary: var(--color-primary);
-  --color-text-secondary: var(--color-secondary);
-  --color-text-hover: #959191;
+	/* Text */
+	--color-text-primary: var(--color-primary);
+	--color-text-secondary: var(--color-secondary);
+	--color-text-hover: #959191;
 }
 
 @layer base {
-  body {
-    font-family: "Spline Sans Mono", sans-serif;
-  }
+	body {
+		font-family: "Spline Sans Mono", sans-serif;
+	}
 }
 
 @layer components {
-  .page {
-    --content-side-padding: 1rem;
+	.page {
+		--content-side-padding: 1rem;
 
-    & .section-padding {
-      padding-inline: var(--content-side-padding);
-    }
-  }
+		& .section-padding {
+			padding-inline: var(--content-side-padding);
+		}
+
+		@media (min-width: 64rem) {
+			--content-side-padding: 2rem;
+		}
+
+		@media (min-width: 64rem) {
+			--content-side-padding: 2.5rem;
+		}
+	}
 }
 
 @layer utilities {
-  .font-bold-condensed {
-    font-family: "Sofia Sans Condensed";
-    font-weight: bold;
-  }
+	.font-bold-condensed {
+		font-family: "Sofia Sans Condensed";
+		font-weight: bold;
+	}
 }
