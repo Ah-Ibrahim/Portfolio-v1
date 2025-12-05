@@ -62,6 +62,7 @@ function HamburgerMenu() {
 			<div className="space-y-4 mt-auto">
 				<LinkList
 					links={links}
+					listStyle="flex justify-between"
 					linkStyle="flex items-center gap-x-2 font-light uppercase"
 				/>
 				<div className="text-center font-bold-condensed text-2xl">
