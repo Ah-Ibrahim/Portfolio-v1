@@ -22,6 +22,7 @@ function Footer() {
 			</div>
 			<LinkList
 				links={links}
+				listStyle="flex justify-between"
 				linkStyle="flex items-center gap-x-2 font-light uppercase"
 			/>
 			<div className="uppercase font-bold-condensed text-6xl -tracking-wider text-center">
