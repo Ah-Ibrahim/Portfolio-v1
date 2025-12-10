@@ -1,9 +1,11 @@
 import imageUrl from "@/assets/images/personal-image.jpeg";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import screenBreakpoints from "@/lib/breakpoints";
 
 function HeroSection() {
-  const isTabletOrLarger = useMediaQuery("(min-width:48rem)");
+  // Tablet or larger
+  const isMd = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
 
   return (
     <section className="bg-bg-primary pt-23 section-padding md:pb-4">
@@ -31,7 +33,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      {isTabletOrLarger && (
+      {isMd && (
         <p className="text-center w-lg mx-auto mt-10 uppercase">
           Turning ideas into clean, expressive interfaces — with a bit of
           creative obsession. Every detail matters, and I aim to ship work
