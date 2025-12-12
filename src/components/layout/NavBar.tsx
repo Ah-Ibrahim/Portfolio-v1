@@ -36,7 +36,7 @@ function NavBar() {
         <nav className="flex justify-between section-padding py-6 items-center text-white *:uppercase">
           <a
             href="#"
-            className="w-min font-bold-condensed text-2xl leading-[0.75]"
+            className="w-min font-bold-condensed text-2xl leading-[0.75] lg:text-3xl"
           >
             Ahmed Ibrahim
           </a>
@@ -47,7 +47,7 @@ function NavBar() {
                 listStyle="flex justify-between gap-x-[4vw]"
                 linkStyle="flex items-center gap-x-2 font-light uppercase"
               />
-              <a href="#" className="flex border-b">
+              <a href="#" className="flex border-b text-lg">
                 Contact me <ArrowIcon />
               </a>
             </>
