@@ -14,10 +14,10 @@ try {
 
 function Services() {
   return (
-    <section className="py-10 bg-bg-primary">
+    <section className="py-10 md:py-16 bg-bg-primary">
       <div className="flex justify-between section-padding mb-10 uppercase font-bold-condensed tracking-tighter">
-        <h2 className="text-5xl ">Services</h2>
-        <div className="text-sm">DSGN/4</div>
+        <h2 className="text-5xl md:text-6xl lg:text-8xl">Services</h2>
+        <div className="text-sm md:text-base lg:text-lg">DSGN/4</div>
       </div>
       <Accordion panelsData={services} />
     </section>
