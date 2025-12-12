@@ -14,7 +14,7 @@ try {
 
 function Projects() {
   return (
-    <section className="bg-bg-primary pt-8 pb-10">
+    <section className="bg-bg-primary pt-4 pb-10">
       <Accordion panelsData={projects} />
     </section>
   );
