@@ -1,6 +1,11 @@
 import LinkList from "@/components/common/LinkList";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import screenBreakpoints from "@/lib/breakpoints";
 import type { link } from "@/lib/schemas/definitions";
+import { createTimeObject } from "@/lib/utils/time";
+import { Activity, useEffect, useState } from "react";
 
+const timeObject = createTimeObject();
 const links: link[] = [
   {
     text: "LinkedIn",
@@ -13,6 +18,19 @@ const links: link[] = [
 ];
 
 function Footer() {
+  const [time, setTime] = useState<string>(timeObject.getTime());
+  const timeZone = timeObject.getTimeZone();
+
+  const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime(timeObject.getTime());
+    }, 1000);
+
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <footer className="bg-bg-primary section-padding py-4 space-y-4 lg:pt-20">
       <div className="text-center font-bold-condensed text-2xl md:text-3xl lg:text-4xl lg:text-end xl:text-5xl">
@@ -28,8 +46,17 @@ function Footer() {
       <div className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw]">
         Ahmed Ibrahim
       </div>
-      <div className="text-sm text-center text-secondary">
-        &copy; All Rights Reserved. 2025 AhmedIbrahim
+      <div className="lg:flex justify-between">
+        <Activity mode={isLg ? "visible" : "hidden"}>
+          <div className="font-light text-xs text-right uppercase tracking-widest">
+            <div>
+              Alexandria, Egypt: ({timeZone}) {time}
+            </div>
+          </div>
+        </Activity>
+        <div className="text-sm text-center text-text-secondary">
+          &copy; All Rights Reserved. 2025 AhmedIbrahim
+        </div>
       </div>
     </footer>
   );
