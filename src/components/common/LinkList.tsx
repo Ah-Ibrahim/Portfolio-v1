@@ -10,7 +10,7 @@ function LinkList({ links, linkStyle, listStyle }: LinkListProps) {
   const items = links.map((link, index) => (
     <li key={link.text + index}>
       <a href={link.href} target="_blank" className={linkStyle}>
-        [<span className="">{link.text}</span>]
+        {link.text}
       </a>
     </li>
   ));

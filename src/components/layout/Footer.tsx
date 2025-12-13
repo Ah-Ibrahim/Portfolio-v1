@@ -41,7 +41,7 @@ function Footer() {
       <LinkList
         links={links}
         listStyle="flex justify-between"
-        linkStyle="flex items-center gap-x-2 font-light uppercase"
+        linkStyle="font-light uppercase bracket-hover-animation"
       />
       <div className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw]">
         Ahmed Ibrahim

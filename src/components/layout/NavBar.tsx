@@ -45,7 +45,7 @@ function NavBar() {
               <LinkList
                 links={links}
                 listStyle="flex justify-between gap-x-[4vw]"
-                linkStyle="flex items-center gap-x-2 font-light uppercase"
+                linkStyle="font-light uppercase bracket-hover-animation"
               />
               <a href="#" className="flex border-b text-lg">
                 Contact me <ArrowIcon />
@@ -57,7 +57,7 @@ function NavBar() {
               onClick={() => setIsMenuShown((prev) => !prev)}
             >
               {isMenuShown ? (
-                <span>[ close ]</span>
+                <span className="bracket-hover-animation">close</span>
               ) : (
                 <span className="relative after:content-['+'] after:absolute after:bottom-1/2 after:text-xs">
                   Menu

@@ -58,4 +58,34 @@
     font-family: "Sofia Sans Condensed";
     font-weight: bold;
   }
+
+  .bracket-hover-animation {
+    --spacing: 0.5em;
+    --translation-duration: 0.3s;
+    --translation-target: 0.5em;
+
+    --translation: 0em;
+
+    &::before {
+      content: "[";
+      margin-inline-end: var(--spacing);
+      transform: translateX(calc(var(--translation) * -1));
+    }
+
+    &::after {
+      content: "]";
+      margin-inline-start: var(--spacing);
+      transform: translateX(var(--translation));
+    }
+
+    &::before,
+    &::after {
+      display: inline-block;
+      transition: transform var(--translation-duration);
+    }
+
+    &:hover {
+      --translation: var(--translation-target);
+    }
+  }
 }
