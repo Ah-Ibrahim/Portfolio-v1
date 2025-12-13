@@ -34,7 +34,10 @@ function Footer() {
   return (
     <footer className="bg-bg-primary section-padding py-4 space-y-4 lg:pt-20">
       <div className="text-center font-bold-condensed text-2xl md:text-3xl lg:text-4xl lg:text-end xl:text-5xl">
-        <a href="mailto:ahmed.ibrahim.elsayed01@gmail.com">
+        <a
+          href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
+          className="underline-animation"
+        >
           ahmed.ibrahim.elsayed01@gmail.com
         </a>
       </div>

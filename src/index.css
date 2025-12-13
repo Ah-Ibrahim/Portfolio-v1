@@ -88,4 +88,47 @@
       --translation: var(--translation-target);
     }
   }
+
+  .underline-animation {
+    position: relative;
+    --transition-main: cubic-bezier(0.11, 0.82, 0.39, 0.92);
+
+    &::before,
+    &::after {
+      content: "";
+      height: 5%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      background-color: currentColor;
+    }
+
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.8s var(--transition-main);
+      transition-delay: 0.1s;
+    }
+
+    &::after {
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.8s var(--transition-main);
+      transition-delay: 0s;
+    }
+
+    &:hover::before {
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s var(--transition-main);
+      transition-delay: 0s;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.8s var(--transition-main);
+      transition-delay: 0.1s;
+    }
+  }
 }

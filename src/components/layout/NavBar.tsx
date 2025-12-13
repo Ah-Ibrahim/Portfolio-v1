@@ -47,7 +47,7 @@ function NavBar() {
                 listStyle="flex justify-between gap-x-[4vw]"
                 linkStyle="font-light uppercase bracket-hover-animation"
               />
-              <a href="#" className="flex border-b text-lg">
+              <a href="#" className="flex text-lg underline-animation">
                 Contact me <ArrowIcon />
               </a>
             </>
