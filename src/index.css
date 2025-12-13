@@ -43,7 +43,7 @@
       padding-inline: var(--content-side-padding);
     }
 
-    @media (min-width: 64rem) {
+    @media (min-width: 48rem) {
       --content-side-padding: 2rem;
     }
 
