@@ -63,7 +63,7 @@ function HamburgerMenu() {
 				<LinkList
 					links={links}
 					listStyle="flex justify-between"
-					linkStyle="flex items-center gap-x-2 font-light uppercase"
+          linkStyle="flex items-center gap-x-2 font-light uppercase bracket-hover-animation"
 				/>
 				<div className="text-center font-bold-condensed text-2xl">
 					<a
