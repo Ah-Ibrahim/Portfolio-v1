@@ -27,6 +27,7 @@ function ContactForm() {
     <form
       onSubmit={handleSubmit}
       className="flex flex-col py-6 lg:w-xl lg:mx-auto"
+      autoComplete="on"
     >
       <input
         id="name"
@@ -58,6 +59,7 @@ function ContactForm() {
         style={{
           scrollbarWidth: "none",
         }}
+        autoComplete="off"
       />
       <div className="text-red-500 mt-1">
         <ValidationError
