@@ -3,7 +3,7 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import screenBreakpoints from "@/lib/breakpoints";
 
-function HeroSection() {
+function Hero() {
   // Tablet or larger
   const isMd = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
 
@@ -60,4 +60,4 @@ function HeroSection() {
     </section>
   );
 }
-export default HeroSection;
+export default Hero;
