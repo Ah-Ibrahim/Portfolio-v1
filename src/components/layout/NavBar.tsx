@@ -48,7 +48,8 @@ function NavBar() {
                 linkStyle="font-light uppercase bracket-hover-animation"
               />
               <a
-                href="#"
+                href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
+                target="_blank"
                 className="flex text-lg underline-animation group gap-x-2"
               >
                 Contact me <ArrowIcon />
