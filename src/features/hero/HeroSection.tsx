@@ -8,7 +8,7 @@ function HeroSection() {
   const isMd = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
 
   return (
-    <section className="bg-bg-primary pt-23 section-padding md:pb-4">
+    <section className="bg-bg-primary pt-23 section-padding md:pb-4  selection:text-white selection:bg-black">
       <div className="sm:max-md:px-4 flex flex-col isolate">
         <h1 className="text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] sm:max-md:text-right md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[15.15vw] md:mt-6 text-right">
           Creative Developer

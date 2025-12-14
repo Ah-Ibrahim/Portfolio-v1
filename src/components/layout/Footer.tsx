@@ -32,7 +32,7 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="bg-bg-primary section-padding py-4 space-y-8 md:space-y-10 lg:space-y-12 lg:pt-20">
+    <footer className="bg-bg-primary section-padding py-4 space-y-8 md:space-y-10 lg:space-y-12 lg:pt-20 selection:text-white selection:bg-black">
       <div className="text-center font-bold-condensed text-2xl md:text-3xl lg:text-4xl lg:text-end xl:text-5xl">
         <a
           href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
