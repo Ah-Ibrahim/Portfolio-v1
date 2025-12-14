@@ -27,6 +27,9 @@
   --color-text-primary: var(--color-primary);
   --color-text-secondary: var(--color-secondary);
   --color-text-hover: #959191;
+
+  /* Transform */
+  --tw-duration: 0.4s;
 }
 
 @layer base {

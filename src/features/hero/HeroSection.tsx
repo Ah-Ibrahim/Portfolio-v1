@@ -42,7 +42,7 @@ function HeroSection() {
       )}
       <a
         href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
-        className="flex flex-col items-center mt-25x md:mt-20 md:items-start md:text-lg lg:text-xl"
+        className="flex flex-col items-center md:mt-20 md:items-start group"
       >
         <div className="w-max">
           <span className=" uppercase font-light flex gap-x-1">

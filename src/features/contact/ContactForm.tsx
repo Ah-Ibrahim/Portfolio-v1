@@ -69,7 +69,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="uppercase cursor-pointer underline-animation flex self-center mt-10 md:text-xl lg:mt-14 lg:text-2xl"
+        className="uppercase cursor-pointer underline-animation flex gap-x-2 self-center mt-10 md:text-xl lg:mt-14 lg:text-2xl group"
       >
         Discuss Project <ArrowIcon />
       </button>
