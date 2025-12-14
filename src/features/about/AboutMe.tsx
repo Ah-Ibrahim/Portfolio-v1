@@ -1,7 +1,18 @@
 import imageUrl from "@/assets/images/personal-image.jpeg";
 import ArrowIcon from "@/components/ui/ArrowIcon";
+import useGSAPScrub from "@/hooks/useGSAPScrub";
+import { useRef } from "react";
 
 function AboutMe() {
+  // For GSAP scrub
+  const scrubContainer = useRef<HTMLDivElement>(null);
+  const scrubElement = useRef<HTMLHeadingElement>(null);
+
+  useGSAPScrub<HTMLHeadingElement, HTMLDivElement>(
+    scrubElement,
+    scrubContainer
+  );
+
   return (
     <section
       className="bg-bg-secondary text-white section-padding pt-10 pb-6"
@@ -54,12 +65,15 @@ function AboutMe() {
         </div>
       </div>
       {/* NOTE: Maybe About me should be added to About me section */}
-      <h2
-        className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center pt-15 md:text-7xl lg:text-8xl"
-        id="projects"
-      >
-        Recent works
-      </h2>
+      <div className="mt-15 overflow-hidden" ref={scrubContainer}>
+        <h2
+          className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center md:text-7xl lg:text-8xl leading-none"
+          id="projects"
+          ref={scrubElement}
+        >
+          Recent works
+        </h2>
+      </div>
     </section>
   );
 }

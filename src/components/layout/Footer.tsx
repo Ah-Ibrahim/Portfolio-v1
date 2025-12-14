@@ -1,9 +1,10 @@
 import LinkList from "@/components/common/LinkList";
+import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import screenBreakpoints from "@/lib/breakpoints";
 import type { link } from "@/lib/schemas/definitions";
 import { createTimeObject } from "@/lib/utils/time";
-import { Activity, useEffect, useState } from "react";
+import { Activity, useEffect, useRef, useState } from "react";
 
 const timeObject = createTimeObject();
 const links: link[] = [
@@ -22,6 +23,7 @@ function Footer() {
   const timeZone = timeObject.getTimeZone();
 
   const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
+  const isSmallerThanMd = useMediaQuery(`(max-width:${screenBreakpoints.md})`);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -30,6 +32,20 @@ function Footer() {
 
     return () => clearInterval(id);
   }, []);
+
+  const scrubContainer = useRef<HTMLDivElement>(null);
+  const scrubElement = useRef<HTMLDivElement>(null);
+
+  const startScrub = isSmallerThanMd ? "top 90%" : "top 85%";
+  const endScrub = isSmallerThanMd ? "+=15" : "top 65%";
+
+  useGSAPScrub<HTMLDivElement, HTMLDivElement>(
+    scrubElement,
+    scrubContainer,
+    startScrub,
+    endScrub,
+    true
+  );
 
   return (
     <footer className="bg-bg-primary section-padding py-4 space-y-8 md:space-y-10 lg:space-y-12 lg:pt-20 selection:text-white selection:bg-black">
@@ -47,8 +63,13 @@ function Footer() {
         linkStyle="font-light uppercase bracket-hover-animation"
         newTab
       />
-      <div className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw]">
-        Ahmed Ibrahim
+      <div className="overflow-hidden" ref={scrubContainer}>
+        <div
+          className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw] leading-none"
+          ref={scrubElement}
+        >
+          Ahmed Ibrahim
+        </div>
       </div>
       <div className="lg:flex justify-between">
         <Activity mode={isLg ? "visible" : "hidden"}>

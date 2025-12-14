@@ -1,8 +1,10 @@
 import Accordion from "@/components/common/Accordion";
 import servicesData from "@/data/services.json";
+import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import screenBreakpoints from "@/lib/breakpoints";
 import { ServiceSchema, type ServiceType } from "@/lib/schemas/definitions";
+import { useRef } from "react";
 import z from "zod";
 import Table from "./Table";
 
@@ -18,13 +20,27 @@ try {
 function Services() {
   const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
 
+  const scrubContainer = useRef<HTMLDivElement>(null);
+  const scrubElement = useRef<HTMLHeadingElement>(null);
+
+  useGSAPScrub<HTMLHeadingElement, HTMLDivElement>(
+    scrubElement,
+    scrubContainer
+  );
+
   return (
     <section
       className="py-10 md:py-16 bg-bg-primary selection:text-white selection:bg-black"
       id="services"
     >
-      <div className="flex justify-between section-padding mb-10 uppercase font-bold-condensed tracking-tighter">
-        <h2 className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl tracking-tighter">
+      <div
+        className="flex justify-between section-padding mb-10 uppercase font-bold-condensed tracking-tighter overflow-hidden"
+        ref={scrubContainer}
+      >
+        <h2
+          className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl tracking-tighter leading-none"
+          ref={scrubElement}
+        >
           Services
         </h2>
         <div className="text-sm md:text-base lg:text-lg xl:text-2xl">
