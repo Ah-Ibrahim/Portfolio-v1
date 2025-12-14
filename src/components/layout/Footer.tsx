@@ -45,6 +45,7 @@ function Footer() {
         links={links}
         listStyle="flex justify-between"
         linkStyle="font-light uppercase bracket-hover-animation"
+        newTab
       />
       <div className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw]">
         Ahmed Ibrahim
