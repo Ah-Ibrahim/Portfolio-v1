@@ -1,19 +1,24 @@
 import imageUrl from "@/assets/images/personal-image.jpeg";
 import ArrowIcon from "@/components/ui/ArrowIcon";
+import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import screenBreakpoints from "@/lib/breakpoints";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import animateHero from "./Hero.animation";
+import useHeroAnimation from "./useHeroAnimation";
 
 function Hero() {
   // Tablet or larger
   const isMd = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
+  const isSmallerThanMd = useMediaQuery(`(max-width:${screenBreakpoints.md})`);
+
   const container = useRef<HTMLElement | null>(null);
 
-  useGSAP(() => {
-    animateHero(container.current);
-  });
+  // for useGSAPScrub
+  const scrubElement = useRef<HTMLHeadingElement>(null);
+  const scrubContainer = useRef<HTMLDivElement>(null);
+
+  useHeroAnimation(container, isSmallerThanMd);
+  useGSAPScrub(scrubElement, scrubContainer);
 
   return (
     <section
@@ -88,9 +93,19 @@ function Hero() {
         </div>
       </a>
       {/* NOTE: Maybe About me should be added to About me section */}
-      <h2 className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center mt-15 md:mt-20 md:text-[11vw] lg:text-[13vw]">
-        About me
-      </h2>
+      <div
+        className="mt-15 md:mt-20 overflow-hidden"
+        id="about-container-animation"
+        ref={scrubContainer}
+      >
+        <h2
+          id="about-animation"
+          ref={scrubElement}
+          className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center  md:text-[11vw] lg:text-[13vw] leading-none"
+        >
+          About me
+        </h2>
+      </div>
     </section>
   );
 }
