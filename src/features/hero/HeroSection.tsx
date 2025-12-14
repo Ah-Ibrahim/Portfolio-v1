@@ -49,8 +49,7 @@ function HeroSection() {
             Available for collaboration <ArrowIcon />
           </span>
         </div>
-        {/* TODO: hover animation needs after and before underline instead of this   */}
-        <div className="font-bold-condensed underline sm:max-md:self-end md:translate-x-1/2">
+        <div className="font-bold-condensed underline-animation sm:max-md:self-end md:translate-x-1/3 md:text-xl lg:text-2xl group-hover:opacity-50 transition-opacity">
           ahmed.ibrahim.elsayed01@gmail.com
         </div>
       </a>
