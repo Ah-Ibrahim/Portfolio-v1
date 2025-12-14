@@ -42,19 +42,19 @@ function HeroSection() {
       )}
       <a
         href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
-        className="flex flex-col items-center md:mt-20 md:items-start group"
+        className="flex flex-col items-center mt-10 md:mt-20 md:w-max group"
       >
         <div className="w-max">
-          <span className=" uppercase font-light flex gap-x-1">
+          <span className=" uppercase font-light flex gap-x-2 md:text-lg lg:text-xl">
             Available for collaboration <ArrowIcon />
           </span>
         </div>
-        <div className="font-bold-condensed underline-animation sm:max-md:self-end md:translate-x-1/3 md:text-xl lg:text-2xl group-hover:opacity-50 transition-opacity">
+        <div className="font-bold-condensed underline-animation max-md:self-end md:translate-x-1/3 md:text-xl lg:text-2xl group-hover:opacity-50 transition-opacity">
           ahmed.ibrahim.elsayed01@gmail.com
         </div>
       </a>
       {/* NOTE: Maybe About me should be added to About me section */}
-      <h2 className="uppercase font-bold-condensed text-[4.75rem] lg:text-9xl tracking-tighter text-center mt-10 md:mt-20">
+      <h2 className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center mt-15 md:mt-20 md:text-[11vw] lg:text-[13vw]">
         About me
       </h2>
     </section>

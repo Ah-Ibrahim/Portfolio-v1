@@ -26,8 +26,8 @@ function TablePanel({
         <div className="-tracking-widest group-hover:text-4xl group-hover:tracking-tighter">
           00-{index + 1}
         </div>
-        <div className="hidden font-bold-condensed text-4xl uppercase group-hover:block -translate-y-2 -translate-x-6 tracking-tighter">
-          <span className="me-5">//</span> {title}
+        <div className="hidden font-bold-condensed text-3xl xl:text-4xl uppercase group-hover:block xl:-translate-y-2 xl:-translate-x-6 tracking-tighter lg:max-xl:text-end">
+          <span className="xl:me-5">//</span> {title}
         </div>
       </div>
       <div className="uppercase group-hover:hidden font-bold-condensed text-3xl tracking-tighter">
@@ -45,7 +45,7 @@ function TablePanel({
           <img className="w-full" src={imageLink} alt={title} />
         </figure>
       </div>
-      <p className="uppercase font-light text-base text-start hidden group-hover:block mt-6">
+      <p className="uppercase font-light text-base text-start hidden group-hover:block">
         {description}
       </p>
     </div>

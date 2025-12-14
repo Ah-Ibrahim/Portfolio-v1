@@ -5,8 +5,8 @@ function AboutMe() {
   return (
     <section className="bg-bg-secondary text-white section-padding pt-10 pb-6">
       <div className="uppercase text-lg flex justify-between mb-6 font-bold-condensed">
-        <div className="md:text-3xl">2/5</div>
-        <div>DSGN/2</div>
+        <div className="md:text-3xl lg:text-4xl xl:text-5xl">2/5</div>
+        <div className="lg:text-lg xl:text-2xl">DSGN/2</div>
       </div>
       <div className="md:w-lg md:mx-auto md:font-light">
         <div className="w-46 lg:w-55 sm:max-lg:mx-auto mt-1 space-y-6">

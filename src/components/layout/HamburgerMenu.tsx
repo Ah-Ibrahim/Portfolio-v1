@@ -68,7 +68,8 @@ function HamburgerMenu() {
 				<div className="text-center font-bold-condensed text-2xl">
 					<a
 						href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
-						className="underline">
+            className="underline-animation"
+          >
 						ahmed.ibrahim.elsayed01@gmail.com
 					</a>
 				</div>

@@ -8,7 +8,7 @@ function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <p className="uppercase font-bold-condensed my-6 text-center text-3xl">
+      <p className="uppercase font-bold-condensed my-6 md:my-15 lg:my-25 text-center text-3xl md:text-4xl lg:text-5xl">
         Got it! 👍
       </p>
     );
