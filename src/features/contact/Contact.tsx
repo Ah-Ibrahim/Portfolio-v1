@@ -2,7 +2,10 @@ import ContactForm from "@/features/contact/ContactForm";
 
 function Contact() {
   return (
-    <section className="section-padding bg-bg-primary space-y-4 lg:space-y-12 py-12 lg:py-16 selection:text-white selection:bg-black">
+    <section
+      className="section-padding bg-bg-primary space-y-4 lg:space-y-12 py-12 lg:py-16 selection:text-white selection:bg-black"
+      id="contact"
+    >
       <div className="text-center tracking-[-0.2em] uppercase">
         <div className="font-bold-condensed tracking-tighter lg:text-2xl xl:text-3xl">
           Let's start the conversation

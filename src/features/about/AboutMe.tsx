@@ -3,7 +3,10 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 
 function AboutMe() {
   return (
-    <section className="bg-bg-secondary text-white section-padding pt-10 pb-6">
+    <section
+      className="bg-bg-secondary text-white section-padding pt-10 pb-6"
+      id="about"
+    >
       <div className="uppercase text-lg flex justify-between mb-6 font-bold-condensed">
         <div className="md:text-3xl lg:text-4xl xl:text-5xl">2/5</div>
         <div className="lg:text-lg xl:text-2xl">DSGN/2</div>
@@ -51,7 +54,10 @@ function AboutMe() {
         </div>
       </div>
       {/* NOTE: Maybe About me should be added to About me section */}
-      <h2 className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center mt-10 md:text-7xl lg:text-8xl">
+      <h2
+        className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center pt-15 md:text-7xl lg:text-8xl"
+        id="projects"
+      >
         Recent works
       </h2>
     </section>

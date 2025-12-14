@@ -9,19 +9,19 @@ import ArrowIcon from "../ui/ArrowIcon";
 const links: link[] = [
   {
     text: "About me",
-    href: "#",
+    href: "#about",
   },
   {
     text: "Projects",
-    href: "#",
+    href: "#projects",
   },
   {
     text: "Services",
-    href: "#",
+    href: "#services",
   },
   {
     text: "Connect",
-    href: "#",
+    href: "#contact",
   },
 ];
 

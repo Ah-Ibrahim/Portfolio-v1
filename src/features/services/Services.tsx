@@ -19,7 +19,10 @@ function Services() {
   const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
 
   return (
-    <section className="py-10 md:py-16 bg-bg-primary selection:text-white selection:bg-black">
+    <section
+      className="py-10 md:py-16 bg-bg-primary selection:text-white selection:bg-black"
+      id="services"
+    >
       <div className="flex justify-between section-padding mb-10 uppercase font-bold-condensed tracking-tighter">
         <h2 className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl tracking-tighter">
           Services
