@@ -5,10 +5,16 @@ import Contact from "@/features/contact/Contact";
 import Hero from "@/features/hero/Hero";
 import Projects from "@/features/projects/Projects";
 import Services from "@/features/services/Services";
+import { useRef } from "react";
+import useIntroAnimation from "./useIntroAnimation";
 
 function HomePage() {
+  const container = useRef<HTMLDivElement>(null);
+
+  useIntroAnimation(container);
+
   return (
-    <div className="page">
+    <div className="page" ref={container}>
       <NavBar />
       <Hero />
       <AboutMe />

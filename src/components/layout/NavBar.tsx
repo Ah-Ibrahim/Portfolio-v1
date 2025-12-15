@@ -32,7 +32,10 @@ function NavBar() {
 
   return (
     <>
-      <header className="fixed w-full mix-blend-exclusion z-20">
+      <header
+        className="fixed w-full mix-blend-exclusion z-20 invisible"
+        id="navbar-animation"
+      >
         <nav className="flex justify-between section-padding py-6 items-center text-white *:uppercase">
           <a
             href="#"

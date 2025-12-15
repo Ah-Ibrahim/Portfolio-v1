@@ -4,12 +4,10 @@ import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import screenBreakpoints from "@/lib/breakpoints";
 import { useRef } from "react";
-import useHeroAnimation from "./useHeroAnimation";
 
 function Hero() {
   // Tablet or larger
   const isMd = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
-  const isSmallerThanMd = useMediaQuery(`(max-width:${screenBreakpoints.md})`);
 
   const container = useRef<HTMLElement | null>(null);
 
@@ -17,7 +15,6 @@ function Hero() {
   const scrubElement = useRef<HTMLHeadingElement>(null);
   const scrubContainer = useRef<HTMLDivElement>(null);
 
-  useHeroAnimation(container, isSmallerThanMd);
   useGSAPScrub(scrubElement, scrubContainer);
 
   return (
@@ -81,7 +78,8 @@ function Hero() {
       )}
       <a
         href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
-        className="flex flex-col items-center mt-10 md:mt-20 md:w-max group"
+        className="flex flex-col items-center mt-10 md:mt-20 md:w-max group invisible"
+        id="collaboration-animation"
       >
         <div className="w-max">
           <span className=" uppercase font-light flex gap-x-2 md:text-lg lg:text-xl">

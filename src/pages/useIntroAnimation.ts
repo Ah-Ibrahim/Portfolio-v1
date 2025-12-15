@@ -1,20 +1,22 @@
+import useMediaQuery from "@/hooks/useMediaQuery";
+import screenBreakpoints from "@/lib/breakpoints";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import type { RefObject } from "react";
 
-function useHeroAnimation(
-  container: RefObject<HTMLElement | null>,
-  isSmallerThanMd: boolean
-) {
+function useIntroAnimation(container: RefObject<HTMLElement | null>) {
+  const isSmallerThanMd = useMediaQuery(`(max-width:${screenBreakpoints.md})`);
+
   useGSAP(
     () => {
       if (!container.current) return;
 
       const containerElement = container.current;
 
-      const timeline = gsap.timeline({ id: "Hero" });
+      const navbar = containerElement.querySelector("#navbar-animation");
 
+      // Hero section
       const heading = containerElement.querySelector("#hero-animation");
       const locationText = containerElement.querySelector(
         "#location-animation"
@@ -28,11 +30,14 @@ function useHeroAnimation(
         "#image-container-animation"
       );
       const image = containerElement.querySelector("#image-animation");
+      const collaboration = containerElement.querySelector(
+        "#collaboration-animation"
+      );
+
+      const timeline = gsap.timeline({ id: "Hero" });
 
       const type = isSmallerThanMd ? "words" : "chars";
-
       const splitHeading = SplitText.create(heading, { type });
-
       const splitTarget = isSmallerThanMd
         ? splitHeading.words
         : splitHeading.chars;
@@ -52,7 +57,7 @@ function useHeroAnimation(
           [locationText, introContainer, introDescription],
           {
             autoAlpha: 0,
-            duration: 0.5,
+            duration: 1,
           },
           "<35%"
         )
@@ -91,6 +96,10 @@ function useHeroAnimation(
         "intro-text"
       );
 
+      timeline.from([navbar, collaboration], {
+        autoAlpha: 0,
+      });
+
       return () => {
         splitHeading.revert();
       };
@@ -99,4 +108,4 @@ function useHeroAnimation(
   );
 }
 
-export default useHeroAnimation;
+export default useIntroAnimation;
