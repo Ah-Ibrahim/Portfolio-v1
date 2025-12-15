@@ -36,8 +36,11 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
 
       const timeline = gsap.timeline({ id: "Hero" });
 
-      const type = isSmallerThanMd ? "words" : "chars";
-      const splitHeading = SplitText.create(heading, { type });
+      const type = isSmallerThanMd ? "words,lines" : "chars";
+      const splitHeading = SplitText.create(heading, {
+        type,
+        mask: isSmallerThanMd ? "lines" : undefined,
+      });
       const splitTarget = isSmallerThanMd
         ? splitHeading.words
         : splitHeading.chars;
