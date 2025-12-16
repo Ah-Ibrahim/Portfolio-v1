@@ -30,6 +30,10 @@ function NavBar() {
   // Desktop or larger
   const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
 
+  const handleCloseMenu = () => {
+    setIsMenuShown(false);
+  };
+
   return (
     <>
       <header
@@ -40,6 +44,7 @@ function NavBar() {
           <a
             href="#"
             className="w-min font-bold-condensed text-2xl leading-[0.75] lg:text-3xl"
+            onClick={handleCloseMenu}
           >
             Ahmed Ibrahim
           </a>
@@ -74,7 +79,7 @@ function NavBar() {
           )}
         </nav>
       </header>
-      {!isLg && isMenuShown && <HamburgerMenu />}
+      {!isLg && isMenuShown && <HamburgerMenu onClose={handleCloseMenu} />}
     </>
   );
 }

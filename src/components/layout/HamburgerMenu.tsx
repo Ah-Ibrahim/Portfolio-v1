@@ -15,7 +15,7 @@ const links: link[] = [
   },
 ];
 
-function HamburgerMenu() {
+function HamburgerMenu({ onClose }: { onClose: () => void }) {
   const [time, setTime] = useState<string>(timeObject.getTime());
   const timeZone = timeObject.getTimeZone();
 
@@ -48,16 +48,24 @@ function HamburgerMenu() {
       </div>
       <ul className="uppercase text-5xl font-bold-condensed space-y-3 my-auto tracking-tighter">
         <li>
-          <a href="#">About me</a>
+          <a href="#about" onClick={onClose}>
+            About me
+          </a>
         </li>
         <li>
-          <a href="#">Works</a>
+          <a href="#projects" onClick={onClose}>
+            Projects
+          </a>
         </li>
         <li>
-          <a href="#">Services</a>
+          <a href="#services" onClick={onClose}>
+            Services
+          </a>
         </li>
         <li>
-          <a href="#">Connect</a>
+          <a href="#contact" onClick={onClose}>
+            Connect
+          </a>
         </li>
       </ul>
       <div className="space-y-4 mt-auto">
