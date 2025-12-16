@@ -1,4 +1,5 @@
 import type { AccordionPanelData } from "@/lib/schemas/definitions";
+import { getNumeratedIndex } from "@/lib/utils/common";
 
 interface AccordionPanelProps extends Omit<AccordionPanelData, "id"> {
   isSelected: boolean;
@@ -35,7 +36,7 @@ function AccordionPanel({
       <div className="flex items-center space-x-4 cursor-pointer ">
         {!isSelected && (
           <span className="text-secondary text-sm tracking-tighter md:text-base lg:text-lg">
-            00-{index + 1}
+            {getNumeratedIndex(index)}
           </span>
         )}
         <h2

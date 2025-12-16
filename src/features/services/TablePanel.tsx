@@ -1,4 +1,5 @@
 import type { AccordionPanelData } from "@/lib/schemas/definitions";
+import { getNumeratedIndex } from "@/lib/utils/common";
 
 interface TablePanelProps extends Omit<AccordionPanelData, "id"> {
   index: number;
@@ -24,7 +25,7 @@ function TablePanel({
     <div className="border-r px-4 py-7 hover:flex-[2.75] group flex flex-col hover:justify-between h-120 hover:bg-white">
       <div className="font-bold-condensed flex justify-between">
         <div className="-tracking-widest group-hover:text-4xl group-hover:tracking-tighter">
-          00-{index + 1}
+          {getNumeratedIndex(index)}
         </div>
         <div className="hidden font-bold-condensed text-3xl xl:text-4xl uppercase group-hover:block xl:-translate-y-2 xl:-translate-x-6 tracking-tighter lg:max-xl:text-end">
           <span className="xl:me-5">//</span> {title}
