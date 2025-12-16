@@ -23,7 +23,7 @@ function AboutMe() {
         <div className="lg:text-lg xl:text-2xl">DSGN/2</div>
       </div>
       <div className="md:w-lg md:mx-auto md:font-light">
-        <div className="w-46 lg:w-55 sm:max-lg:mx-auto mt-1 space-y-6">
+        <div className="w-46 lg:w-55 max-lg:mx-auto mt-1 space-y-6">
           <img
             className="w-full"
             src={imageUrl}

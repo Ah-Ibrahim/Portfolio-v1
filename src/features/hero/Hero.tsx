@@ -20,19 +20,19 @@ function Hero() {
   return (
     <section
       ref={container}
-      className="bg-bg-primary pt-23 section-padding md:pb-4 selection:text-white selection:bg-black"
+      className="bg-bg-primary pt-23 section-padding pb-8 selection:text-white selection:bg-black"
     >
       <div className="sm:max-md:px-4 flex flex-col isolate">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden md:mt-6">
           <h1
-            className="text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] sm:max-md:text-right md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[14.75vw] md:mt-6 max-md:text-right"
+            className="text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] sm:max-md:text-right md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[14.5vw]  max-md:text-right"
             id="hero-animation"
           >
             Creative Developer
           </h1>
         </div>
         <div
-          className="text-[0.70rem] uppercase flex justify-between *:tracking-[1em] translate-x-2 md:w-1/3 md:ms-auto font-bold-condensed lg:w-1/4 lg:text-base invisible"
+          className="text-[0.70rem] uppercase flex justify-between *:tracking-[1em] translate-x-2 md:w-1/3 md:ms-auto font-bold-condensed lg:w-1/4 xl:text-base invisible"
           id="location-animation"
         >
           <span>Based</span>
