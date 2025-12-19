@@ -45,6 +45,11 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
         ? splitHeading.words
         : splitHeading.chars;
 
+      timeline.set(container.current, {
+        autoAlpha: 1,
+        delay: 0.25,
+      });
+
       timeline.from(splitTarget, {
         y: "-110%",
         stagger: {
@@ -88,26 +93,25 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
         "intro-text"
       );
 
-      timeline.from(
-        image,
-        {
-          autoAlpha: 0,
-          scale: 1.75,
-          duration: 1,
-          ease: "power3.out",
-        },
-        "intro-text"
-      );
+      timeline
+        .from(
+          image,
+          {
+            autoAlpha: 0,
+            scale: 1.75,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "intro-text"
+        )
+        .addLabel("hero-image");
 
       timeline.from([navbar, collaboration], {
+        delay: 0,
         autoAlpha: 0,
       });
-
-      return () => {
-        splitHeading.revert();
-      };
     },
-    { scope: container }
+    { scope: container, dependencies: [isSmallerThanMd], revertOnUpdate: true }
   );
 }
 

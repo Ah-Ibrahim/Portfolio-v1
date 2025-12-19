@@ -14,7 +14,7 @@ function HomePage() {
   useIntroAnimation(container);
 
   return (
-    <div className="page" ref={container}>
+    <div className="page invisible" ref={container}>
       <NavBar />
       <Hero />
       <AboutMe />
