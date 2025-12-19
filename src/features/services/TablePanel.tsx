@@ -1,6 +1,7 @@
 import type { AccordionPanelData } from "@/lib/schemas/definitions";
 import { getNumeratedIndex } from "@/lib/utils/common";
-
+import { useRef } from "react";
+import { useTablePanelAnimations } from "./useTablePanelAnimations";
 interface TablePanelProps extends Omit<AccordionPanelData, "id"> {
   index: number;
 }
@@ -12,41 +13,45 @@ function TablePanel({
   index,
   keywords,
 }: TablePanelProps) {
+  const container = useRef<HTMLDivElement>(null);
+
+  useTablePanelAnimations(container);
+
   const keywordsItems = keywords?.map((keyword, index) => (
-    <li
-      key={keyword + index}
-      className="font-bold-condensed uppercase tracking-tighter text-xl md:text-2xl"
-    >
-      / {keyword}
+    <li key={keyword + index} className="overflow-hidden">
+      <div className="font-bold-condensed uppercase tracking-tighter text-xl md:text-2xl table-keywords-animation">
+        / {keyword}
+      </div>
     </li>
   ));
 
   return (
-    <div className="border-r px-4 py-7 hover:flex-[2.75] group flex flex-col hover:justify-between h-120 hover:bg-white">
-      <div className="font-bold-condensed flex justify-between">
-        <div className="-tracking-widest group-hover:text-4xl group-hover:tracking-tighter">
+    <div
+      className="border-r px-4 py-7 hover:flex-[2.75] group flex flex-col hover:justify-between h-120 hover:bg-white transition-[flex] flex-1 duration-1000"
+      ref={container}
+    >
+      <div className="font-bold-condensed relative">
+        <div className="-tracking-widest group-hover:text-4xl group-hover:tracking-tighter transition-[font-size] duration-500 ">
           {getNumeratedIndex(index)}
         </div>
-        <div className="hidden font-bold-condensed text-3xl xl:text-4xl uppercase group-hover:block xl:-translate-y-2 xl:-translate-x-6 tracking-tighter lg:max-xl:text-end">
-          <span className="xl:me-5">//</span> {title}
+        <div className="overflow-hidden absolute right-0 top-0">
+          <div className="font-bold-condensed text-3xl xl:text-4xl uppercase tracking-tighter lg:max-xl:text-end -translate-y-[110%] text-nowrap panel-title-animation">
+            <span className="xl:me-5">//</span> {title}
+          </div>
         </div>
       </div>
       <div className="uppercase group-hover:hidden font-bold-condensed text-3xl tracking-tighter">
         {title}
       </div>
-      <div
-        className={`hidden group-hover:flex ${
-          index % 2 ? "flex-row-reverse" : ""
-        }`}
-      >
+      <div className={`flex ${index % 2 ? "flex-row-reverse" : ""}`}>
         <ul className={`flex-1 ${index % 2 ? "*:ms-2" : ""}`}>
           {keywordsItems}
         </ul>
-        <figure className="flex-1">
+        <figure className="flex-1 invisible panel-image-animation">
           <img className="w-full" src={imageLink} alt={title} />
         </figure>
       </div>
-      <p className="uppercase font-light text-base text-start hidden group-hover:block">
+      <p className="uppercase font-light text-base text-start invisible panel-description-animation">
         {description}
       </p>
     </div>
