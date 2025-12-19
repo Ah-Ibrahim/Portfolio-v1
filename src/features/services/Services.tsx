@@ -18,7 +18,7 @@ try {
 }
 
 function Services() {
-  const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
+  const isXl = useMediaQuery(`(min-width:${screenBreakpoints.xl})`);
 
   const scrubContainer = useRef<HTMLDivElement>(null);
   const scrubElement = useRef<HTMLHeadingElement>(null);
@@ -47,7 +47,7 @@ function Services() {
           DSGN/4
         </div>
       </div>
-      {isLg ? (
+      {isXl ? (
         <Table panelsData={services} />
       ) : (
         <Accordion panelsData={services} />
