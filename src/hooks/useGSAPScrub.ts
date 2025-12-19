@@ -38,12 +38,8 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
           end,
         },
       });
-
-      return () => {
-        split.revert();
-      };
     },
-    { scope: container }
+    { scope: container, dependencies: [start, end], revertOnUpdate: true }
   );
 }
 
