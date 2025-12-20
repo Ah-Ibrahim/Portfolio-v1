@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import type { RefObject } from "react";
 
@@ -17,14 +18,19 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
   showMarkers: boolean = false
 ) {
   useGSAP(
-    () => {
+    async () => {
       if (!element.current || !container.current) return;
 
-      const split = SplitText.create(element.current, { type: "chars" });
+      await document.fonts.ready;
+
+      const split = SplitText.create(element.current, {
+        type: "chars",
+        autoSplit: true,
+      });
 
       const sign = isReversed ? "+" : "-";
 
-      gsap.from(split.chars, {
+      const tween = gsap.from(split.chars, {
         y: sign + "110%",
         stagger: {
           from: "center",
@@ -38,8 +44,19 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
           end,
         },
       });
+
+      ScrollTrigger.refresh();
+
+      return () => {
+        tween?.revert();
+        split?.revert();
+        tween?.scrollTrigger?.kill();
+      };
     },
-    { scope: container, dependencies: [start, end], revertOnUpdate: true }
+    {
+      scope: container,
+      dependencies: [start, end, isReversed],
+    }
   );
 }
 
