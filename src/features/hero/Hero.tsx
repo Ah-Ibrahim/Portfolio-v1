@@ -25,7 +25,7 @@ function Hero() {
       <div className="sm:max-md:px-4 flex flex-col isolate">
         <div className="overflow-hidden md:mt-6">
           <h1
-            className="text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] sm:max-md:text-right md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[14.5vw]  max-md:text-right"
+            className="text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] sm:max-md:text-right md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[14vw]  max-md:text-right"
             id="hero-animation"
           >
             Creative Developer
@@ -52,6 +52,8 @@ function Hero() {
                   className="w-full invisible"
                   id="image-animation"
                   alt="Ahmed Ibrahim"
+                  width={210}
+                  height={243}
                 ></img>
               </div>
             </div>
