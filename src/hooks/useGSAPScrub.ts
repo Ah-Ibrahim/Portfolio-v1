@@ -18,19 +18,21 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
   showMarkers: boolean = false
 ) {
   useGSAP(
-    async () => {
+    () => {
       if (!element.current || !container.current) return;
 
-      await document.fonts.ready;
+      let split: globalThis.SplitText | null = null;
+      let tween: gsap.core.Tween | null = null;
 
-      const split = SplitText.create(element.current, {
+      document.fonts.ready.then(() => {
+        split = SplitText.create(element.current, {
         type: "chars",
         autoSplit: true,
       });
 
       const sign = isReversed ? "+" : "-";
 
-      const tween = gsap.from(split.chars, {
+        tween = gsap.from(split.chars, {
         y: sign + "110%",
         stagger: {
           from: "center",
