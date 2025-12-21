@@ -26,28 +26,32 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
 
       document.fonts.ready.then(() => {
         split = SplitText.create(element.current, {
-        type: "chars",
-        autoSplit: true,
-      });
+          type: "chars",
+          autoSplit: true,
+        });
 
-      const sign = isReversed ? "+" : "-";
+        const sign = isReversed ? "+" : "-";
 
         tween = gsap.from(split.chars, {
-        y: sign + "110%",
-        stagger: {
-          from: "center",
-          each: STAGGERS_EACH,
-        },
-        scrollTrigger: {
-          trigger: container.current,
-          scrub: SCRUB,
-          markers: showMarkers,
-          start,
-          end,
-        },
-      });
+          y: sign + "110%",
+          stagger: {
+            from: "center",
+            each: STAGGERS_EACH,
+          },
+          scrollTrigger: {
+            trigger: container.current,
+            scrub: SCRUB,
+            markers: showMarkers,
+            start,
+            end,
+          },
+        });
 
-      ScrollTrigger.refresh();
+        // delay for  layout shift
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 500);
+      });
 
       return () => {
         tween?.revert();
