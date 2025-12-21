@@ -1,7 +1,8 @@
 import LinkList from "@/components/common/LinkList";
 import type { link } from "@/lib/schemas/definitions";
 import { createTimeObject } from "@/lib/utils/time";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useHamburgerAnimation } from "./useHamburgerAnimations";
 
 const timeObject = createTimeObject();
 const links: link[] = [
@@ -15,7 +16,13 @@ const links: link[] = [
   },
 ];
 
-function HamburgerMenu({ onClose }: { onClose: () => void }) {
+function HamburgerMenu({
+  onClose,
+  isMenuShown,
+}: {
+  onClose: () => void;
+  isMenuShown: boolean;
+}) {
   const [time, setTime] = useState<string>(timeObject.getTime());
   const timeZone = timeObject.getTimeZone();
 
@@ -27,18 +34,15 @@ function HamburgerMenu({ onClose }: { onClose: () => void }) {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
+  const container = useRef<HTMLElement>(null);
 
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
+  useHamburgerAnimation(container, isMenuShown);
 
   return (
     <nav
       aria-label="Main navigation"
       className="bg-white fixed inset-0 w-full h-full pt-19.5 flex flex-col pb-2 section-padding z-10"
+      ref={container}
     >
       <div className="font-light text-xs text-right uppercase tracking-widest">
         <div>Alexandria, Egypt:</div>

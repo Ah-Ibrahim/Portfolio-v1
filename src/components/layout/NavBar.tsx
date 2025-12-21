@@ -79,7 +79,9 @@ function NavBar() {
           )}
         </nav>
       </header>
-      {!isLg && isMenuShown && <HamburgerMenu onClose={handleCloseMenu} />}
+      {!isLg && (
+        <HamburgerMenu onClose={handleCloseMenu} isMenuShown={isMenuShown} />
+      )}
     </>
   );
 }
