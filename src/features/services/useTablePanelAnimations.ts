@@ -55,21 +55,12 @@ export function useTablePanelAnimations(
       );
 
       timeline.from(
-        ".panel-image-animation",
+        [".panel-image-animation", ".panel-description-animation"],
         {
           autoAlpha: 0,
           duration: 1,
         },
         "-=20%"
-      );
-
-      timeline.from(
-        ".panel-description-animation",
-        {
-          autoAlpha: 0,
-          duration: 1,
-        },
-        "<"
       );
 
       return () => {
