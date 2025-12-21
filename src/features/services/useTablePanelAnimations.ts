@@ -6,7 +6,7 @@ export function useTablePanelAnimations(
   container: RefObject<HTMLDivElement | null>
 ) {
   useGSAP(
-    (context, contextSafe) => {
+    (_context, contextSafe) => {
       const containerElement = container.current;
       if (!containerElement) return;
 
