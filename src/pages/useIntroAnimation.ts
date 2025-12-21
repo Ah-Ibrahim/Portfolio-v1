@@ -110,6 +110,11 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
         delay: 0,
         autoAlpha: 0,
       });
+
+      return () => {
+        timeline?.revert();
+        splitHeading?.revert();
+      };
     },
     { scope: container, dependencies: [isSmallerThanMd], revertOnUpdate: true }
   );
