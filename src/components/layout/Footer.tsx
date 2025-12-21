@@ -23,7 +23,7 @@ function Footer() {
   const timeZone = timeObject.getTimeZone();
 
   const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
-  const isSmallerThanMd = useMediaQuery(`(max-width:${screenBreakpoints.md})`);
+  const isSmallerThanLg = useMediaQuery(`(max-width:${screenBreakpoints.lg})`);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -36,8 +36,8 @@ function Footer() {
   const scrubContainer = useRef<HTMLDivElement>(null);
   const scrubElement = useRef<HTMLDivElement>(null);
 
-  const startScrub = isSmallerThanMd ? "top 90%" : "top 85%";
-  const endScrub = isSmallerThanMd ? "+=15" : "top 65%";
+  const startScrub = isSmallerThanLg ? "top 90%" : "top 85%";
+  const endScrub = isSmallerThanLg ? "+=15" : "top 65%";
 
   useGSAPScrub<HTMLDivElement, HTMLDivElement>(
     scrubElement,
