@@ -1,6 +1,8 @@
 import type { AccordionPanelData } from "@/lib/schemas/definitions";
 import { getNumeratedIndex } from "@/lib/utils/common";
 import { useRef } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { useTablePanelAnimations } from "./useTablePanelAnimations";
 interface TablePanelProps extends Omit<AccordionPanelData, "id"> {
   index: number;
@@ -48,7 +50,12 @@ function TablePanel({
           {keywordsItems}
         </ul>
         <figure className="flex-1 invisible panel-image-animation">
-          <img className="w-full" src={imageLink} alt={title} />
+          <LazyLoadImage
+            className="w-full"
+            src={imageLink}
+            alt={title}
+            effect="blur"
+          />
         </figure>
       </div>
       <p className="uppercase font-light text-base text-start invisible panel-description-animation">

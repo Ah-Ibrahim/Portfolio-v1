@@ -1,6 +1,8 @@
 import type { AccordionPanelData } from "@/lib/schemas/definitions";
 import { getNumeratedIndex } from "@/lib/utils/common";
 import { useRef } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import ArrowIcon from "../ui/ArrowIcon";
 import { useAccordionPanelAnimations } from "./useAccordionPanelAnimations";
 
@@ -63,7 +65,12 @@ function AccordionPanel({
               !keywords ? "lg:flex-[0.5] lg:mx-auto" : ""
             } `}
           >
-            <img className="w-full" src={imageLink} alt={title} />
+            <LazyLoadImage
+              className="w-full"
+              src={imageLink}
+              alt={title}
+              effect="blur"
+            />
           </figure>
         </div>
         {previewLink && (
