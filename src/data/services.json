@@ -24,7 +24,7 @@
   {
     "title": "Performance Optimization",
     "description": "I improve app speed by reducing unnecessary rendering, loading only what’s needed, and keeping the UI lightweight.",
-    "imageLink": "https://github.com/Ah-Ibrahim/Desserts-list-with-cart/raw/main/design/desktop-design-selected.jpg",
+    "imageLink": "https://github.com/Ah-Ibrahim/Ecommerce-product-page/raw/main/design/desktop-preview.jpg",
     "keywords": [
       "Lazy Loading",
       "Efficient Rendering",
@@ -34,7 +34,7 @@
   {
     "title": "API Integration",
     "description": "I connect apps to real data with clean, reliable API handling, including loading states, errors, and updates.",
-    "imageLink": "https://github.com/Ah-Ibrahim/Desserts-list-with-cart/raw/main/design/desktop-design-selected.jpg",
+    "imageLink": "https://raw.githubusercontent.com/Ah-Ibrahim/Marketing-landing-page/refs/heads/main/designs/Preview.jpg",
     "keywords": ["RESTs API", "React Query", "Data Fetching"]
   }
 ]
