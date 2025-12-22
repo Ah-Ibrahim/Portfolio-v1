@@ -1,73 +1,133 @@
-# React + TypeScript + Vite
+# 🎨 Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly animated, performance-optimized portfolio built to showcase modern frontend engineering skills, clean architecture, and smooth user experiences.
 
-Currently, two official plugins are available:
+![Project Screenshot](./designs/Preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live Preview](https://ah-ibrahim.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📋 Table of Contents
 
-## Expanding the ESLint configuration
+- [About](#-about)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
+- [Features](#-features)
+- [Getting Started](#%EF%B8%8F-getting-started)
+- [Project Structure](#project-structure)
+- [License](#-license)
+- [Credits](#-credits)
+- [Authors](#%EF%B8%8F-authors)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 👋 About
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This is **my personal frontend developer portfolio**, designed to do more than just show pretty screens.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+It demonstrates:
+
+- 💎 **Polished, high-impact animations** that bring the UI to life
+- 🏗️ **Clean, scalable architecture** built with React and TypeScript
+- ⚡ **Performance-first mindset**, with lazy loading and optimized assets
+
+Every section is **interactive, data-driven, and animation-rich**, showing that I don’t just code — I craft experiences.
+
+---
+
+## 🛠️ Tech Stack
+
+Here’s what’s under the hood:
+
+- **React** – UI development
+- **TypeScript** – Type safety & maintainability
+- **Tailwind CSS** – Utility-first styling
+- **GSAP** – Advanced animations & scroll interactions
+- **Zod** – Runtime schema validation
+- **JSON** – Data-driven content structure
+- **Vite** – Fast development & build tooling
+
+---
+
+## ✨ Features
+
+Some cool stuff this project can do:
+
+- ⚡ Animation-heavy UI using GSAP
+- 🧠 Scroll-based and timeline animations
+- 🎬 Intro animations and section reveals
+- 📱 Fully responsive across devices
+- 💤 Lazy loading for performance optimization
+- 📦 JSON-based data (projects, services)
+- 🔒 Type-safe data validation with Zod
+- 🧼 Clean, modular component structure
+
+---
+
+## ⚙️ Getting Started
+
+Wanna run this locally? Follow these steps:
+
+1. Clone the repo
+
+```bash
+git clone https://github.com/Ah-Ibrahim/Portfolio-v1.git
+cd Portfolio-v1
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+3. Start the app
+
+```bash
+npm run dev
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├── assets/           # Images, fonts, static assets
+├── components/       # Reusable UI components
+|   ├─ common/        # General-purpose reusable components
+|   ├─ ui/            # Buttons, cards, inputs, modals
+|   └─ layout/        # Navbar, Footer, Section wrappers
+├── data/             # JSON-based content
+├── hooks/            # Custom React hooks
+├── lib/
+|   ├─ utils/         # Helper functions
+|   └─ schemas/       # Zod schemas
+├── pages/            # Page-level components
+├── utils/
+├── features/         # Page-specific logic grouped by domain
+├── App.tsx
+└── main.tsx
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+Feel free to do what you want with it.
+
+---
+
+## 🙏 Credits
+
+Big thanks to:
+
+- Icons from [Remix](https://remixicon.com/)
+
+---
+
+## ✍️ Authors
+
+Ahmed Ibrahim
