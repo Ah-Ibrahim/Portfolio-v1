@@ -105,7 +105,6 @@ src/
 |   ├─ utils/         # Helper functions
 |   └─ schemas/       # Zod schemas
 ├── pages/            # Page-level components
-├── utils/
 ├── features/         # Page-specific logic grouped by domain
 ├── App.tsx
 └── main.tsx
