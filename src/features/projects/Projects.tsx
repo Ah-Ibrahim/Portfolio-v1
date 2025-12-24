@@ -24,7 +24,7 @@ function Projects() {
     >
       <Suspense
         fallback={
-          <div className="px-4 md:px-6 text-3xl font-bold-condensed uppercase tracking-tighter md:text-4xl lg:md:text-5xl">
+          <div className="border-b border-dark-gray px-4 md:px-6 md:py-4 py-2 text-3xl font-bold-condensed uppercase tracking-tighter md:text-4xl lg:md:text-5xl">
             loading...
           </div>
         }
