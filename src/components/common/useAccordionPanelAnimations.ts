@@ -18,15 +18,9 @@ export function useAccordionPanelAnimations(
         timeline.set(containerElement, {
           backgroundColor: "white",
         });
-        timeline.fromTo(
-          ".accordion-body-animation",
-          {
-            height: 0,
-          },
-          {
-            height: "auto",
-          }
-        );
+        timeline.to(".accordion-body-animation", {
+          height: "auto",
+        });
 
         timeline.to(
           ".accordion-index-animation",

@@ -53,7 +53,7 @@ function AccordionPanel({
           {title}
         </h2>
       </div>
-      <div className="overflow-hidden box-border space-y-6 accordion-body-animation">
+      <div className="overflow-hidden box-border space-y-6 accordion-body-animation h-0">
         <div className={`flex mt-6 ${index % 2 ? "flex-row-reverse" : ""}`}>
           {keywords && (
             <ul className={`flex-1 ${index % 2 ? "*:ms-2" : ""}`}>
