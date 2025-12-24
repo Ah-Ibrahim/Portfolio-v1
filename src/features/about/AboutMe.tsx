@@ -64,7 +64,6 @@ function AboutMe() {
           feel effortless yet alive.
         </div>
       </div>
-      {/* NOTE: Maybe About me should be added to About me section */}
       <div className="mt-15 overflow-hidden" ref={scrubContainer}>
         <h2
           className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center md:text-7xl lg:text-8xl leading-none"
