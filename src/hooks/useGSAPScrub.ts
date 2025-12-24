@@ -48,9 +48,9 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
         });
 
         // delay for  layout shift
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           ScrollTrigger.refresh();
-        }, 500);
+        });
       });
 
       return () => {
