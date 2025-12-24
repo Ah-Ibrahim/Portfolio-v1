@@ -1,22 +1,22 @@
 [
   {
-    "title": "E-commerce page ",
-    "description": "A responsive ecommerce ordering website with a smooth shopping experience, responsive with custom Lightbox, animations and fully responsive. ",
-    "imageLink": "https://github.com/Ah-Ibrahim/Ecommerce-product-page/raw/main/design/desktop-preview.jpg",
+    "title": "E-commerce page",
+    "description": "A responsive E-Commerce ordering website with a smooth shopping experience, responsive with custom Lightbox, animations and fully responsive. ",
+    "imageLink": "/images/E-Commerce_Page.jpg",
     "previewLink": "https://ah-ibrahim.github.io/Ecommerce-product-page/",
     "colorTheme": "#ff7d1a"
   },
   {
     "title": "Marketing Landing Page",
     "description": "A sleek and responsive marketing landing page built with React + TypeScript, styled with TailwindCSS, animated with Motion, and validated with Zod for runtime safety.",
-    "imageLink": "https://raw.githubusercontent.com/Ah-Ibrahim/Marketing-landing-page/refs/heads/main/designs/Preview.jpg",
+    "imageLink": "/images/Marketing_Landing_Page.jpg",
     "previewLink": "https://ah-ibrahim.github.io/Marketing-landing-page/",
     "colorTheme": "#4438ca"
   },
   {
     "title": "Desserts Shop",
     "description": "A responsive dessert ordering website with a smooth shopping experience and performance optimizations.",
-    "imageLink": "https://github.com/Ah-Ibrahim/Desserts-list-with-cart/raw/main/design/desktop-design-selected.jpg",
+    "imageLink": "/images/Desserts_Shop.jpg",
     "previewLink": "https://ah-ibrahim.github.io/Desserts-list-with-cart/",
     "colorTheme": "#c73a0f"
   }

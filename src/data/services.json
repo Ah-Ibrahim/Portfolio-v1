@@ -2,19 +2,19 @@
   {
     "title": "Single Page Applications",
     "description": "I build fast, modern React apps with clean structure and smooth user flow, designed to scale as features grow.",
-    "imageLink": "https://raw.githubusercontent.com/Ah-Ibrahim/Marketing-landing-page/refs/heads/main/designs/Preview.jpg",
+    "imageLink": "/images/E-Commerce_Page.jpg",
     "keywords": ["React SPA", "Routing", "Reuseable Components"]
   },
   {
     "title": "UI/UX Implementation",
     "description": "I turn Figma designs into polished, accurate interfaces with consistent styling and attention to visual detail.",
-    "imageLink": "https://github.com/Ah-Ibrahim/Ecommerce-product-page/raw/main/design/desktop-preview.jpg",
+    "imageLink": "/images/Marketing_Landing_Page.jpg",
     "keywords": ["Figma to React", "Pixel-Perfect UI"]
   },
   {
     "title": "Responsive Web Development",
     "description": "I create layouts that adapt naturally to any device, ensuring everything looks and feels right on every screen size.",
-    "imageLink": "https://github.com/Ah-Ibrahim/Desserts-list-with-cart/raw/main/design/desktop-design-selected.jpg",
+    "imageLink": "/images/Desserts_Shop.jpg",
     "keywords": [
       "Mobile-First Approach",
       "Adaptive Design",
@@ -24,7 +24,7 @@
   {
     "title": "Performance Optimization",
     "description": "I improve app speed by reducing unnecessary rendering, loading only what’s needed, and keeping the UI lightweight.",
-    "imageLink": "https://github.com/Ah-Ibrahim/Ecommerce-product-page/raw/main/design/desktop-preview.jpg",
+    "imageLink": "/images/Marketing_Landing_Page.jpg",
     "keywords": [
       "Lazy Loading",
       "Efficient Rendering",
@@ -34,7 +34,7 @@
   {
     "title": "API Integration",
     "description": "I connect apps to real data with clean, reliable API handling, including loading states, errors, and updates.",
-    "imageLink": "https://raw.githubusercontent.com/Ah-Ibrahim/Marketing-landing-page/refs/heads/main/designs/Preview.jpg",
+    "imageLink": "/images/E-Commerce_Page.jpg",
     "keywords": ["RESTs API", "React Query", "Data Fetching"]
   }
 ]
