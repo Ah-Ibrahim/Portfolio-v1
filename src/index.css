@@ -2,14 +2,18 @@
 
 @font-face {
   font-family: "Spline Sans Mono";
-  src: url("./assets/fonts/Spline_Sans_Mono/SplineSansMono-VariableFont_wght.ttf");
-  font-display: swap;
+  src: url("./assets/fonts/Spline_Sans_Mono/SplineSansMono-VariableFont_wght.woff2")
+      format("woff2"),
+    url("./assets/fonts/Spline_Sans_Mono/SplineSansMono-VariableFont_wght.woff")
+      format("woff");
 }
 
 @font-face {
   font-family: "Sofia Sans Condensed";
-  src: url("./assets/fonts/Sofia_Sans_Condensed/SofiaSansCondensed-VariableFont_wght.ttf");
-  font-display: swap;
+  src: url("./assets/fonts/Sofia_Sans_Condensed/SofiaSansCondensed-VariableFont_wght.woff2")
+      format("woff2"),
+    url("./assets/fonts/Spline_Sans_Mono/SplineSansMono-VariableFont_wght.woff")
+      format("woff");
 }
 
 @theme {
