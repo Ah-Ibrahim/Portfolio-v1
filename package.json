@@ -14,6 +14,7 @@
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.15",
     "@types/react-lazy-load-image-component": "^1.6.5",
+    "@vercel/analytics": "^1.6.1",
     "gsap": "^3.14.2",
     "nanoid": "^5.1.6",
     "react": "^19.1.1",
