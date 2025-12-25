@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import type { RefObject } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { type RefObject } from "react";
 
 export function useAccordionPanelAnimations(
   container: RefObject<HTMLDivElement | null>,
@@ -20,6 +21,7 @@ export function useAccordionPanelAnimations(
         });
         timeline.to(".accordion-body-animation", {
           height: "auto",
+          onComplete: () => ScrollTrigger.refresh(),
         });
 
         timeline.to(
@@ -63,6 +65,7 @@ export function useAccordionPanelAnimations(
 
         timeline.to(".accordion-body-animation", {
           height: 0,
+          onComplete: () => ScrollTrigger.refresh(),
         });
 
         timeline.to(

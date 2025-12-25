@@ -1,7 +1,6 @@
 import AccordionPanel from "@/components/common/AccordionPanel";
 import type { AccordionPanelData } from "@/lib/schemas/definitions";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
 
 interface AccordionProps {
   panelsData: AccordionPanelData[];
@@ -13,12 +12,6 @@ function Accordion({ panelsData }: AccordionProps) {
   const handleClick = (id: string) => {
     setSelectedId(selectedId === id ? null : id);
   };
-
-  useLayoutEffect(() => {
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh();
-    });
-  });
 
   const items = panelsData.map((panelData, index) => (
     <AccordionPanel
