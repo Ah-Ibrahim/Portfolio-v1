@@ -29,6 +29,8 @@ function AboutMe() {
             src={imageUrl}
             alt="My personal image"
             style={{ filter: "grayscale(80%)" }}
+            width={210}
+            height={243}
           />
           <div className="uppercase text-center text-lg leading-tight">
             <div>Hello!</div>
