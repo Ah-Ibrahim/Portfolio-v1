@@ -1,6 +1,7 @@
 import HomePage from "@/pages/HomePage";
 import { useGSAP } from "@gsap/react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import { GSDevTools } from "gsap/GSDevTools";
@@ -27,6 +28,7 @@ function App() {
     <>
       <HomePage />
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
