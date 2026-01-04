@@ -93,18 +93,16 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
         "intro-text"
       );
 
-      timeline
-        .from(
-          image,
-          {
-            autoAlpha: 0,
-            scale: 1.75,
-            duration: 1,
-            ease: "power3.out",
-          },
-          "intro-text"
-        )
-        .addLabel("hero-image");
+      timeline.from(
+        image,
+        {
+          autoAlpha: 0,
+          scale: 1.75,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "intro-text"
+      );
 
       timeline.from([navbar, collaboration], {
         delay: 0,
