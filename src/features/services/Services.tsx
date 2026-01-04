@@ -1,3 +1,4 @@
+import AccordionSkeleton from "@/components/common/AccordionSkeleton";
 import servicesData from "@/data/services.json";
 import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -6,6 +7,7 @@ import { ServiceSchema, type ServiceType } from "@/lib/schemas/definitions";
 import React, { Suspense, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import z from "zod";
+import TableSkeleton from "./TableSkeleton";
 const Accordion = React.lazy(() => import("@/components/common/Accordion"));
 const Table = React.lazy(() => import("./Table"));
 
@@ -51,21 +53,19 @@ function Services() {
           DSGN/4
         </div>
       </div>
-
-      <Suspense
-        fallback={
-          <div className="h-120 border grid place-content-center md:px-6 text-3xl font-bold-condensed uppercase tracking-tighter md:text-4xl lg:md:text-5xl">
-            Loading...
-          </div>
-        }
-      >
-        {inView &&
-          (isXl ? (
-            <Table panelsData={services} />
-          ) : (
+      {isXl ? (
+        <Suspense fallback={<TableSkeleton />}>
+          {inView ? <Table panelsData={services} /> : <TableSkeleton />}
+        </Suspense>
+      ) : (
+        <Suspense fallback={<AccordionSkeleton count={services.length} />}>
+          {inView ? (
             <Accordion panelsData={services} />
-          ))}
-      </Suspense>
+          ) : (
+            <AccordionSkeleton count={services.length} />
+          )}
+        </Suspense>
+      )}
     </section>
   );
 }
