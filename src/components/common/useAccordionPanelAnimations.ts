@@ -1,94 +1,88 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { type RefObject } from "react";
+import { type RefObject, useRef } from "react";
 
 export function useAccordionPanelAnimations(
   container: RefObject<HTMLDivElement | null>,
   isSelected: boolean
 ) {
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+
   useGSAP(
     () => {
-      if (!container.current) return;
-
       const containerElement = container.current;
+      if (!containerElement) return;
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.set(containerElement, {
+        backgroundColor: "white",
+      });
+
+      tl.fromTo(
+        ".accordion-body-animation",
+        { height: 0 },
+        {
+          height: "auto",
+          duration: 0.4,
+          ease: "power2.in",
+          onComplete: () => ScrollTrigger.refresh(),
+          onReverseComplete: () => ScrollTrigger.refresh(),
+        }
+      );
+
+      tl.fromTo(".accordion-index-animation", { y: 0 }, { y: "110%" }, "<");
+
+      tl.fromTo(
+        ".accordion-title-animation",
+        { x: 0 },
+        { x: -40, duration: 0.3 },
+        "<50%"
+      );
+
+      tl.fromTo(
+        ".accordion-keywords-animation",
+        { y: "-110%" },
+        {
+          y: 0,
+          stagger: 0.2,
+          duration: 0.5,
+        },
+        "<"
+      );
+
+      tl.fromTo(
+        [".accordion-image-animation", ".accordion-description-animation"],
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.5,
+        },
+        "-=20%"
+      );
+
+      timelineRef.current = tl;
+
+      return () => {
+        tl.kill();
+        timelineRef.current = null;
+      };
+    },
+    { scope: container }
+  );
+
+  useGSAP(
+    () => {
+      const tl = timelineRef.current;
+      if (!tl) return;
 
       if (isSelected) {
-        const timeline = gsap.timeline();
-
-        timeline.set(containerElement, {
-          backgroundColor: "white",
-        });
-        timeline.to(".accordion-body-animation", {
-          height: "auto",
-          onComplete: () => ScrollTrigger.refresh(),
-        });
-
-        timeline.to(
-          ".accordion-index-animation",
-          {
-            y: "+110%",
-          },
-          "<"
-        );
-        timeline.to(
-          ".accordion-title-animation",
-          {
-            x: -40,
-            duration: 0.3,
-          },
-          "<50%"
-        );
-
-        timeline.from(
-          ".accordion-keywords-animation",
-          {
-            y: "-110%",
-            stagger: {
-              each: 0.2,
-            },
-            duration: 0.5,
-          },
-          "<"
-        );
-
-        timeline.from(
-          [".accordion-image-animation", ".accordion-description-animation"],
-          {
-            autoAlpha: 0,
-            duration: 1,
-          },
-          "-=20%"
-        );
+        tl.play();
       } else {
-        const timeline = gsap.timeline();
-
-        timeline.to(".accordion-body-animation", {
-          height: 0,
-          onComplete: () => ScrollTrigger.refresh(),
-        });
-
-        timeline.to(
-          ".accordion-title-animation",
-          {
-            x: 0,
-          },
-          "<"
-        );
-
-        timeline.to(
-          ".accordion-index-animation",
-          {
-            y: 0,
-          },
-          "<50%"
-        );
-
-        timeline.set(containerElement, {
-          backgroundColor: "",
-        });
+        tl.reverse();
       }
     },
-    { scope: container, dependencies: [isSelected] }
+    { dependencies: [isSelected] }
   );
 }
