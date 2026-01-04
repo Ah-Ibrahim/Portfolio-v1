@@ -35,6 +35,7 @@ function ContactForm() {
         name="name"
         placeholder="Your name*"
         className="border-b placeholder:uppercase py-2 "
+        aria-label="Your name"
       />
       <div className="text-red-500 mt-1">
         <ValidationError prefix="Name" field="name" errors={state.errors} />
@@ -45,6 +46,7 @@ function ContactForm() {
         name="email"
         placeholder="Your email*"
         className="border-b placeholder:uppercase py-2 mt-8"
+        aria-label="Your email"
       />
       <div className="text-red-500 mt-1">
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -60,6 +62,7 @@ function ContactForm() {
           scrollbarWidth: "none",
         }}
         autoComplete="off"
+        aria-label="How can I help you?"
       />
       <div className="text-red-500 mt-1">
         <ValidationError
