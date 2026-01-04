@@ -1,3 +1,4 @@
+import AccordionSkeleton from "@/components/common/AccordionSkeleton";
 import ProjectsData from "@/data/projects.json";
 import { ProjectSchema, type ProjectType } from "@/lib/schemas/definitions";
 import React, { Suspense } from "react";
@@ -22,14 +23,12 @@ function Projects() {
       ref={ref}
       className="bg-bg-primary pt-4 pb-10 selection:text-white selection:bg-black"
     >
-      <Suspense
-        fallback={
-          <div className="border-b border-dark-gray px-4 md:px-6 md:py-4 py-2 text-3xl font-bold-condensed uppercase tracking-tighter md:text-4xl lg:md:text-5xl">
-            loading...
-          </div>
-        }
-      >
-        {inView && <Accordion panelsData={projects} />}
+      <Suspense fallback={<AccordionSkeleton count={projects.length} />}>
+        {inView ? (
+          <Accordion panelsData={projects} />
+        ) : (
+          <AccordionSkeleton count={projects.length} />
+        )}
       </Suspense>
     </section>
   );
