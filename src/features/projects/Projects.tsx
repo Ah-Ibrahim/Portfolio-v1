@@ -1,10 +1,12 @@
-import AccordionSkeleton from "@/components/common/AccordionSkeleton";
+import AccordionSkeleton from "@/components/common/Accordion/AccordionSkeleton";
 import ProjectsData from "@/data/projects.json";
 import { ProjectSchema, type ProjectType } from "@/lib/schemas/definitions";
 import React, { Suspense } from "react";
 import { useInView } from "react-intersection-observer";
 import z from "zod";
-const Accordion = React.lazy(() => import("@/components/common/Accordion"));
+const Accordion = React.lazy(
+  () => import("@/components/common/Accordion/Accordion")
+);
 
 let projects: ProjectType[];
 

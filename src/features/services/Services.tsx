@@ -1,4 +1,4 @@
-import AccordionSkeleton from "@/components/common/AccordionSkeleton";
+import AccordionSkeleton from "@/components/common/Accordion/AccordionSkeleton";
 import servicesData from "@/data/services.json";
 import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -7,9 +7,11 @@ import { ServiceSchema, type ServiceType } from "@/lib/schemas/definitions";
 import React, { Suspense, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import z from "zod";
-import TableSkeleton from "./TableSkeleton";
-const Accordion = React.lazy(() => import("@/components/common/Accordion"));
-const Table = React.lazy(() => import("./Table"));
+import TableSkeleton from "./Table/TableSkeleton";
+const Accordion = React.lazy(
+  () => import("@/components/common/Accordion/Accordion")
+);
+const Table = React.lazy(() => import("./Table/Table"));
 
 let services: ServiceType[];
 
