@@ -16,11 +16,13 @@ function HomePage() {
   return (
     <div className="page invisible" ref={container}>
       <NavBar />
+      <main>
       <Hero />
       <AboutMe />
       <Projects />
       <Services />
       <Contact />
+      </main>
       <Footer />
     </div>
   );
