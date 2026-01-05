@@ -45,11 +45,6 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
         ? splitHeading.words
         : splitHeading.chars;
 
-      timeline.set(container.current, {
-        autoAlpha: 1,
-        delay: 0.25,
-      });
-
       timeline.from(splitTarget, {
         y: "-110%",
         stagger: {
