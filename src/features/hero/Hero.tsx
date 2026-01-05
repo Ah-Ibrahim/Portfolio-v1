@@ -44,7 +44,7 @@ function Hero() {
           id="intro-animation"
         >
           <div className="flex-5 md:float-right">
-            <div className="md:scale-115 lg:scale-135 origin-bottom-right float-right overflow-hidden aspect-210/243">
+            <div className="md:scale-115 lg:scale-135 origin-bottom-right float-right overflow-hidden aspect-210/243 w-[210px]">
               <div id="image-container-animation" className="overflow-hidden">
                 <img
                   src={imageUrl}

@@ -14,14 +14,14 @@ function HomePage() {
   useIntroAnimation(container);
 
   return (
-    <div className="page invisible" ref={container}>
+    <div className="page" ref={container}>
       <NavBar />
       <main>
-      <Hero />
-      <AboutMe />
-      <Projects />
-      <Services />
-      <Contact />
+        <Hero />
+        <AboutMe />
+        <Projects />
+        <Services />
+        <Contact />
       </main>
       <Footer />
     </div>
