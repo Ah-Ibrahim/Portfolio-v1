@@ -1,4 +1,4 @@
-import imageUrl from "@/assets/images/personal-image.jpeg";
+import imageUrl from "@/assets/images/personal-image.webp";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
