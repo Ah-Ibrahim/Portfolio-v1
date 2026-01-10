@@ -1,10 +1,10 @@
-import type { AccordionPanelData } from "@/lib/schemas/definitions";
+import type { PanelData } from "@/lib/schemas/definitions";
 import { getNumeratedIndex } from "@/lib/utils/common";
 import { useRef } from "react";
 import ArrowIcon from "../../ui/ArrowIcon";
 import { useAccordionPanelAnimations } from "./useAccordionPanelAnimations";
 
-interface AccordionPanelProps extends Omit<AccordionPanelData, "id"> {
+interface AccordionPanelProps extends Omit<PanelData, "id"> {
   isSelected: boolean;
   index: number;
   onClick: () => void;
