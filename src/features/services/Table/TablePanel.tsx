@@ -1,10 +1,10 @@
-import type { AccordionPanelData } from "@/lib/schemas/definitions";
+import type { PanelData } from "@/lib/schemas/definitions";
 import { getNumeratedIndex } from "@/lib/utils/common";
 import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useTablePanelAnimations } from "./useTablePanelAnimations";
-interface TablePanelProps extends Omit<AccordionPanelData, "id"> {
+interface TablePanelProps extends Omit<PanelData, "id"> {
   index: number;
 }
 

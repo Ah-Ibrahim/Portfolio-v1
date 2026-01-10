@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 function Hero() {
   // Tablet or larger
-  const isMd = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
+  const isMdOrLarger = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
 
   const container = useRef<HTMLElement | null>(null);
 
@@ -15,7 +15,11 @@ function Hero() {
   const scrubElement = useRef<HTMLHeadingElement>(null);
   const scrubContainer = useRef<HTMLDivElement>(null);
 
-  useGSAPScrub(scrubElement, scrubContainer);
+  // for large screen, be undefined to use useGSAPScrub default values
+  const startScrub = isMdOrLarger ? undefined : "start 65%";
+  const endScrub = isMdOrLarger ? undefined : "bottom 55%";
+
+  useGSAPScrub(scrubElement, scrubContainer, startScrub, endScrub);
 
   return (
     <section
@@ -23,28 +27,29 @@ function Hero() {
       className="bg-bg-primary pt-23 section-padding pb-8 selection:text-white selection:bg-black"
     >
       <div className="sm:max-md:px-4 flex flex-col isolate">
-        <div className="overflow-hidden md:mt-6">
-          <h1
-            className="text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] sm:max-md:text-right md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[14vw]  max-md:text-right"
-            id="hero-animation"
-          >
-            Creative Developer
+        <div className="md:mt-6">
+          <h1 className="text-[4rem] xs:text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[14vw]">
+            <div className="w-min max-md:text-right max-md:ms-auto md:mx-auto relative">
+              <div id="hero-animation" className="overflow-y-clip">
+                Creative Developer
+              </div>
+              <div
+                className="text-[0.65rem] xs:text-[0.70rem] uppercase flex justify-between *:tracking-[1em] font-bold-condensed lg:w-1/3 lg:text-[0.8rem] xl:text-base absolute max-lg:left-0 right-0 top-full translate-x-3"
+                id="location-animation"
+              >
+                <span>Based</span>
+                <span>in</span>
+                <span>Egypt</span>
+              </div>
+            </div>
           </h1>
         </div>
         <div
-          className="text-[0.70rem] uppercase flex justify-between *:tracking-[1em] translate-x-2 md:w-1/3 md:ms-auto font-bold-condensed lg:w-1/4 xl:text-base invisible"
-          id="location-animation"
-        >
-          <span>Based</span>
-          <span>in</span>
-          <span>Egypt</span>
-        </div>
-        <div
-          className="flex mt-8 gap-x-1 md:gap-x-15 lg:gap-x-22 md:w-fit md:flex-row-reverse md:mx-auto md:bg-bg-accent md:pe-4 md:pb-4 -z-10 invisible"
+          className="flex mt-14 gap-x-1 md:gap-x-15 lg:gap-x-22 md:w-fit md:flex-row-reverse md:mx-auto md:bg-bg-accent md:pe-4 md:pb-4 -z-10 invisible"
           id="intro-animation"
         >
           <div className="flex-5 md:float-right">
-            <div className="md:scale-115 lg:scale-135 origin-bottom-right float-right overflow-hidden aspect-210/243 w-[210px]">
+            <div className="md:scale-115 lg:scale-135 origin-bottom-right float-right overflow-hidden aspect-210/243 w-[140px] xs:w-[210px]">
               <div id="image-container-animation" className="overflow-hidden">
                 <img
                   src={imageUrl}
@@ -68,7 +73,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      {isMd && (
+      {isMdOrLarger && (
         <p
           className="text-center w-lg mx-auto mt-10 uppercase font-light invisible"
           id="intro-desc-animation"
@@ -84,7 +89,7 @@ function Hero() {
         id="collaboration-animation"
       >
         <div className="w-max">
-          <span className=" uppercase font-light flex gap-x-2 md:text-lg lg:text-xl">
+          <span className="text-xs xs:text-base uppercase font-light flex gap-x-2 md:text-lg lg:text-xl">
             Available for collaboration <ArrowIcon />
           </span>
         </div>
@@ -92,7 +97,6 @@ function Hero() {
           ahmed.ibrahim.elsayed01@gmail.com
         </div>
       </a>
-      {/* NOTE: Maybe About me should be added to About me section */}
       <div
         className="mt-15 md:mt-20 overflow-hidden"
         id="about-container-animation"
@@ -101,7 +105,7 @@ function Hero() {
         <h2
           id="about-animation"
           ref={scrubElement}
-          className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center  md:text-[11vw] lg:text-[13vw] leading-none"
+          className="text-[3.5rem] uppercase font-bold-condensed xs:text-[4.75rem] tracking-tighter text-center  md:text-[11vw] lg:text-[13vw] leading-none invisible"
         >
           About me
         </h2>

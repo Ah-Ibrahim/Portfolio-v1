@@ -1,9 +1,9 @@
 import AccordionPanel from "@/components/common/Accordion/AccordionPanel";
-import type { AccordionPanelData } from "@/lib/schemas/definitions";
+import type { PanelData } from "@/lib/schemas/definitions";
 import { useState } from "react";
 
 interface AccordionProps {
-  panelsData: AccordionPanelData[];
+  panelsData: PanelData[];
 }
 
 function Accordion({ panelsData }: AccordionProps) {

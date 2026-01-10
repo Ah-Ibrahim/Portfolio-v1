@@ -1,12 +1,11 @@
 import LinkList from "@/components/common/LinkList";
 import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import useTime from "@/hooks/useTime";
 import screenBreakpoints from "@/lib/breakpoints";
 import type { link } from "@/lib/schemas/definitions";
-import { createTimeObject } from "@/lib/utils/time";
-import { Activity, useEffect, useRef, useState } from "react";
+import { Activity, useRef } from "react";
 
-const timeObject = createTimeObject();
 const links: link[] = [
   {
     text: "LinkedIn",
@@ -19,19 +18,10 @@ const links: link[] = [
 ];
 
 function Footer() {
-  const [time, setTime] = useState<string>(timeObject.getTime());
-  const timeZone = timeObject.getTimeZone();
+  const { time, timeZone } = useTime();
 
   const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
   const isSmallerThanLg = useMediaQuery(`(max-width:${screenBreakpoints.lg})`);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime(timeObject.getTime());
-    }, 1000);
-
-    return () => clearInterval(id);
-  }, []);
 
   const scrubContainer = useRef<HTMLDivElement>(null);
   const scrubElement = useRef<HTMLDivElement>(null);
@@ -49,7 +39,7 @@ function Footer() {
 
   return (
     <footer className="bg-bg-primary section-padding py-4 space-y-8 md:space-y-10 lg:space-y-12 lg:pt-20 selection:text-white selection:bg-black">
-      <div className="text-center font-bold-condensed text-2xl md:text-3xl lg:text-4xl lg:text-end xl:text-5xl">
+      <div className="text-lg text-center font-bold-condensed xs:text-2xl md:text-3xl lg:text-4xl lg:text-end xl:text-5xl">
         <a
           href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
           className="underline-animation"
@@ -60,12 +50,12 @@ function Footer() {
       <LinkList
         links={links}
         listStyle="flex justify-between"
-        linkStyle="font-light uppercase bracket-hover-animation"
+        linkStyle="text-xs xs:text-base font-light uppercase bracket-hover-animation"
         newTab
       />
       <div className="overflow-hidden" ref={scrubContainer}>
         <div
-          className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw] leading-none"
+          className="text-5xl uppercase font-bold-condensed xs:text-6xl -tracking-wider text-center md:text-[17.15vw] leading-none invisible"
           ref={scrubElement}
         >
           Ahmed Ibrahim
@@ -79,7 +69,7 @@ function Footer() {
             </div>
           </div>
         </Activity>
-        <div className="text-sm text-center text-text-secondary">
+        <div className="text-xs xs:text-sm text-center text-text-secondary">
           &copy; All Rights Reserved. 2025 AhmedIbrahim
         </div>
       </div>

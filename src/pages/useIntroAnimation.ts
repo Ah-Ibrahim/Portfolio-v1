@@ -52,7 +52,7 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
           each: 0.075,
         },
         duration: 0.65,
-        ease: "power3.out",
+        ease: isSmallerThanMd ? "power1" : "power3.out",
       });
 
       timeline

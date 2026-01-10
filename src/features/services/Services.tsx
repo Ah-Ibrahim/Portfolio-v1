@@ -46,7 +46,7 @@ function Services() {
         ref={scrubContainer}
       >
         <h2
-          className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl tracking-tighter leading-none"
+          className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl tracking-tighter leading-none invisible"
           ref={scrubElement}
         >
           Services

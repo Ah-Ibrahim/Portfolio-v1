@@ -1,8 +1,8 @@
-import { type AccordionPanelData } from "@/lib/schemas/definitions";
+import { type PanelData } from "@/lib/schemas/definitions";
 import TablePanel from "./TablePanel";
 
 interface TableProps {
-  panelsData: AccordionPanelData[];
+  panelsData: PanelData[];
 }
 
 function Table({ panelsData }: TableProps) {

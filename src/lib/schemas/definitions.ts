@@ -29,7 +29,7 @@ export const ServiceSchema = z
 export type ProjectType = z.infer<typeof ProjectSchema>;
 export type ServiceType = z.infer<typeof ServiceSchema>;
 
-export interface AccordionPanelData {
+export interface PanelData {
   id: string;
   title: string;
   description: string;
