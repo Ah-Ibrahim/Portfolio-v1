@@ -1,10 +1,9 @@
 import LinkList from "@/components/common/LinkList";
+import useTime from "@/hooks/useTime";
 import type { link } from "@/lib/schemas/definitions";
-import { createTimeObject } from "@/lib/utils/time";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useHamburgerAnimation } from "./useHamburgerAnimations";
 
-const timeObject = createTimeObject();
 const links: link[] = [
   {
     text: "LinkedIn",
@@ -23,16 +22,7 @@ function HamburgerMenu({
   onClose: () => void;
   isMenuShown: boolean;
 }) {
-  const [time, setTime] = useState<string>(timeObject.getTime());
-  const timeZone = timeObject.getTimeZone();
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime(timeObject.getTime());
-    }, 1000);
-
-    return () => clearInterval(id);
-  }, []);
+  const { time, timeZone } = useTime();
 
   const container = useRef<HTMLElement>(null);
 

@@ -1,12 +1,11 @@
 import LinkList from "@/components/common/LinkList";
 import useGSAPScrub from "@/hooks/useGSAPScrub";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import useTime from "@/hooks/useTime";
 import screenBreakpoints from "@/lib/breakpoints";
 import type { link } from "@/lib/schemas/definitions";
-import { createTimeObject } from "@/lib/utils/time";
-import { Activity, useEffect, useRef, useState } from "react";
+import { Activity, useRef } from "react";
 
-const timeObject = createTimeObject();
 const links: link[] = [
   {
     text: "LinkedIn",
@@ -19,19 +18,10 @@ const links: link[] = [
 ];
 
 function Footer() {
-  const [time, setTime] = useState<string>(timeObject.getTime());
-  const timeZone = timeObject.getTimeZone();
+  const { time, timeZone } = useTime();
 
   const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
   const isSmallerThanLg = useMediaQuery(`(max-width:${screenBreakpoints.lg})`);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime(timeObject.getTime());
-    }, 1000);
-
-    return () => clearInterval(id);
-  }, []);
 
   const scrubContainer = useRef<HTMLDivElement>(null);
   const scrubElement = useRef<HTMLDivElement>(null);
