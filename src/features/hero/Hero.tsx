@@ -92,7 +92,6 @@ function Hero() {
           ahmed.ibrahim.elsayed01@gmail.com
         </div>
       </a>
-      {/* NOTE: Maybe About me should be added to About me section */}
       <div
         className="mt-15 md:mt-20 overflow-hidden"
         id="about-container-animation"
