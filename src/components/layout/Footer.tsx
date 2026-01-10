@@ -65,7 +65,7 @@ function Footer() {
       />
       <div className="overflow-hidden" ref={scrubContainer}>
         <div
-          className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw] leading-none"
+          className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw] leading-none invisible"
           ref={scrubElement}
         >
           Ahmed Ibrahim

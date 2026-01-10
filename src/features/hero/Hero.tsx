@@ -101,7 +101,7 @@ function Hero() {
         <h2
           id="about-animation"
           ref={scrubElement}
-          className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center  md:text-[11vw] lg:text-[13vw] leading-none"
+          className="uppercase font-bold-condensed text-[4.75rem] tracking-tighter text-center  md:text-[11vw] lg:text-[13vw] leading-none invisible"
         >
           About me
         </h2>

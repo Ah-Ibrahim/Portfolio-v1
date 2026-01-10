@@ -23,7 +23,7 @@ function Contact() {
         </div>
         <div className="overflow-hidden" ref={scrubContainer1}>
           <div
-            className="font-bold-condensed text-[2.75rem] md:text-7xl lg:text-8xl xl:text-9xl"
+            className="font-bold-condensed text-[2.75rem] md:text-7xl lg:text-8xl xl:text-9xl invisible"
             ref={scrubElement1}
           >
             Great Design
@@ -34,7 +34,7 @@ function Contact() {
         </div>
         <div className="overflow-hidden" ref={scrubContainer2}>
           <div
-            className="font-bold-condensed text-[2.75rem] md:text-7xl lg:text-8xl xl:text-9xl"
+            className="font-bold-condensed text-[2.75rem] md:text-7xl lg:text-8xl xl:text-9xl invisible"
             ref={scrubElement2}
           >
             Great Collaboration

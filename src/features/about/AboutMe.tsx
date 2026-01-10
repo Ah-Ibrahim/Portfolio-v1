@@ -68,7 +68,7 @@ function AboutMe() {
       </div>
       <div className="mt-15 overflow-hidden" ref={scrubContainer}>
         <h2
-          className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center md:text-7xl lg:text-8xl leading-none"
+          className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center md:text-7xl lg:text-8xl leading-none invisible"
           id="projects"
           ref={scrubElement}
         >

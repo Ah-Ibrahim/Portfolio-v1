@@ -32,6 +32,10 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
 
         const sign = isReversed ? "+" : "-";
 
+        gsap.set(element.current, {
+          autoAlpha: 1,
+        });
+
         tween = gsap.from(split.chars, {
           y: sign + "110%",
           stagger: {
