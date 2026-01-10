@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 function Hero() {
   // Tablet or larger
-  const isMd = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
+  const isMdOrLarger = useMediaQuery(`(min-width:${screenBreakpoints.md})`);
 
   const container = useRef<HTMLElement | null>(null);
 
@@ -15,7 +15,11 @@ function Hero() {
   const scrubElement = useRef<HTMLHeadingElement>(null);
   const scrubContainer = useRef<HTMLDivElement>(null);
 
-  useGSAPScrub(scrubElement, scrubContainer);
+  // for large screen, be undefined to use useGSAPScrub default values
+  const startScrub = isMdOrLarger ? undefined : "start 65%";
+  const endScrub = isMdOrLarger ? undefined : "bottom 55%";
+
+  useGSAPScrub(scrubElement, scrubContainer, startScrub, endScrub);
 
   return (
     <section
@@ -68,7 +72,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      {isMd && (
+      {isMdOrLarger && (
         <p
           className="text-center w-lg mx-auto mt-10 uppercase font-light invisible"
           id="intro-desc-animation"
