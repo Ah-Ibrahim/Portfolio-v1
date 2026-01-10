@@ -49,7 +49,7 @@ function Footer() {
 
   return (
     <footer className="bg-bg-primary section-padding py-4 space-y-8 md:space-y-10 lg:space-y-12 lg:pt-20 selection:text-white selection:bg-black">
-      <div className="text-center font-bold-condensed text-2xl md:text-3xl lg:text-4xl lg:text-end xl:text-5xl">
+      <div className="text-lg text-center font-bold-condensed xs:text-2xl md:text-3xl lg:text-4xl lg:text-end xl:text-5xl">
         <a
           href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
           className="underline-animation"
@@ -60,12 +60,12 @@ function Footer() {
       <LinkList
         links={links}
         listStyle="flex justify-between"
-        linkStyle="font-light uppercase bracket-hover-animation"
+        linkStyle="text-xs xs:text-base font-light uppercase bracket-hover-animation"
         newTab
       />
       <div className="overflow-hidden" ref={scrubContainer}>
         <div
-          className="uppercase font-bold-condensed text-6xl -tracking-wider text-center md:text-[17.15vw] leading-none invisible"
+          className="text-5xl uppercase font-bold-condensed xs:text-6xl -tracking-wider text-center md:text-[17.15vw] leading-none invisible"
           ref={scrubElement}
         >
           Ahmed Ibrahim
@@ -79,7 +79,7 @@ function Footer() {
             </div>
           </div>
         </Activity>
-        <div className="text-sm text-center text-text-secondary">
+        <div className="text-xs xs:text-sm text-center text-text-secondary">
           &copy; All Rights Reserved. 2025 AhmedIbrahim
         </div>
       </div>

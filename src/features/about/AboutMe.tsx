@@ -41,15 +41,15 @@ function AboutMe() {
           My experience
           <ArrowIcon />
         </div>
-        <div className="uppercase text-xl mt-6 text-center">
+        <div className="uppercase xs:text-xl mt-6 text-center">
           I’ve spent the last couple of years crafting web interfaces, mastering
           the art of turning complexity into simplicity.
         </div>
       </div>
-      <h2 className="uppercase text-text-secondary text-4xl mt-10 lg:text-7xl lg:w-[70%] lg:mt-20">
+      <h2 className="text-2xl uppercase text-text-secondary xs:text-4xl mt-10 lg:text-7xl lg:w-[70%] lg:mt-20">
         IT’S NOT JUST A PROFESSION — IT’S A WAY OF THINKING
       </h2>
-      <div className="uppercase text-xl mt-6 text-center font-light lg:w-lg md:mx-auto">
+      <div className="uppercase xs:text-xl mt-6 text-center font-light lg:w-lg md:mx-auto">
         My work is part of how I see the world. As a creative front-end
         developer, I turn ideas into experiences — shaping how people feel,
         move, and connect through the web.
@@ -59,7 +59,7 @@ function AboutMe() {
           My philosophy
           <ArrowIcon />
         </div>
-        <div className="uppercase text-xl mt-6 text-center font-light">
+        <div className="uppercase xs:text-xl mt-6 text-center font-light">
           I value clarity, precision, and emotion — both in code and in life. I
           believe in intentional design: every pixel and line should have
           purpose. I lean toward functional minimalism, crafting interfaces that
@@ -68,7 +68,7 @@ function AboutMe() {
       </div>
       <div className="mt-15 overflow-hidden" ref={scrubContainer}>
         <h2
-          className="uppercase font-bold-condensed text-[3.75rem] tracking-tighter text-center md:text-7xl lg:text-8xl leading-none invisible"
+          className="text-[3.5rem] uppercase font-bold-condensed xs:text-[3.75rem] tracking-tighter text-center md:text-7xl lg:text-8xl leading-none invisible"
           id="projects"
           ref={scrubElement}
         >
