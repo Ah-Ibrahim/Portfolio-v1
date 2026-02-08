@@ -1,8 +1,12 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
+import SplitText from "gsap/SplitText";
 import type { RefObject } from "react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 const STAGGERS_EACH = 0.04;
 const SCRUB = 4;
@@ -15,7 +19,7 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
   start: string = START_DEFAULT,
   end: string = END_DEFAULT,
   isReversed: boolean = false,
-  showMarkers: boolean = false
+  showMarkers: boolean = false,
 ) {
   useGSAP(
     () => {
@@ -66,7 +70,7 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
     {
       scope: container,
       dependencies: [start, end, isReversed],
-    }
+    },
   );
 }
 
