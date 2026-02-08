@@ -14,6 +14,10 @@ export function useHamburgerAnimation(
     () => {
       if (!container.current) return;
 
+      gsap.set(container.current, {
+        autoAlpha: 1,
+      });
+
       tl.current = gsap
         .timeline({ id: "Menu", paused: true })
         .fromTo(
