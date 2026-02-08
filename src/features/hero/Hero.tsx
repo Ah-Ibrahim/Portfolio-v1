@@ -1,10 +1,11 @@
 "use client";
 
 import ArrowIcon from "@/shared/components/ui/ArrowIcon";
-import img from "@/../public/images/personal-image.webp";
+import PersonalImage from "@/../public/images/personal-image.webp";
 import { useRef } from "react";
 import useIntroAnimation from "../intro-animation/useIntroAnimation";
 import Scrub from "./Scrub";
+import Image from "next/image";
 
 function Hero() {
   const container = useRef<HTMLElement | null>(null);
@@ -41,15 +42,13 @@ function Hero() {
           <div className="flex-5 md:float-right">
             <div className="md:scale-115 lg:scale-135 origin-bottom-right float-right overflow-hidden aspect-210/243 w-[140px] xs:w-[210px]">
               <div id="image-container-animation" className="overflow-hidden">
-                <img
-                  src={img.src}
+                <Image
+                  src={PersonalImage}
                   style={{ filter: "grayscale(80%)" }}
                   className="w-full invisible"
                   id="image-animation"
                   alt="Ahmed Ibrahim"
-                  width={210}
-                  height={243}
-                ></img>
+                ></Image>
               </div>
             </div>
           </div>

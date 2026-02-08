@@ -6,6 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { useTablePanelAnimations } from "./useTablePanelAnimations";
 import { PanelData } from "@/shared/lib/schemas/definitions";
 import { getNumeratedIndex } from "@/shared/lib/utils/common";
+import Image from "next/image";
 interface TablePanelProps extends Omit<PanelData, "id"> {
   index: number;
 }
@@ -51,12 +52,13 @@ function TablePanel({
         <ul className={`flex-1 ${index % 2 ? "*:ms-2" : ""}`}>
           {keywordsItems}
         </ul>
-        <figure className="flex-1 invisible panel-image-animation">
-          <LazyLoadImage
+        <figure className="flex-1 invisible panel-image-animation h-20">
+          <Image
             className="w-full"
             src={imageLink}
             alt={title}
-            effect="blur"
+            width={200}
+            height={200}
           />
         </figure>
       </div>

@@ -1,6 +1,7 @@
 import img from "@/../public/images/personal-image.webp";
 import ArrowIcon from "@/shared/components/ui/ArrowIcon";
 import Scrub from "./Scrub";
+import Image from "next/image";
 
 function AboutMe() {
   return (
@@ -14,13 +15,11 @@ function AboutMe() {
       </div>
       <div className="md:w-lg md:mx-auto md:font-light">
         <div className="w-46 lg:w-55 max-lg:mx-auto mt-1 space-y-6">
-          <img
+          <Image
             className="w-full"
-            src={img.src}
+            src={img}
             alt="My personal image"
             style={{ filter: "grayscale(80%)" }}
-            width={210}
-            height={243}
           />
           <div className="uppercase text-center text-lg leading-tight">
             <div>Hello!</div>

@@ -5,7 +5,7 @@ import { getNumeratedIndex } from "@/shared/lib/utils/common";
 import { useRef } from "react";
 import ArrowIcon from "../../ui/ArrowIcon";
 import { useAccordionPanelAnimations } from "./useAccordionPanelAnimations";
-// import { useAccordionPanelAnimations } from "./useAccordionPanelAnimations";
+import Image from "next/image";
 
 interface AccordionPanelProps extends Omit<PanelData, "id"> {
   isSelected: boolean;
@@ -66,7 +66,13 @@ function AccordionPanel({
               !keywords ? "lg:flex-[0.5] lg:mx-auto" : ""
             } `}
           >
-            <img className="w-full" src={imageLink} alt={title} />
+            <Image
+              className="w-full"
+              src={imageLink}
+              alt={title}
+              width={500}
+              height={500}
+            />
           </figure>
         </div>
         {previewLink && (
