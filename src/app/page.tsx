@@ -1,18 +1,18 @@
 import AboutMe from "@/features/about/AboutMe";
+import Contact from "@/features/contact/Contact";
 import Hero from "@/features/hero/Hero";
 import Projects from "@/features/projects/Projects";
-import NavBar from "@/shared/components/layout/NavBar";
+import Services from "@/features/services/Services";
 
 function page() {
   return (
-    <div className="page">
-      <NavBar />
-      <main>
-        <Hero />
-        <AboutMe />
-        <Projects />
-      </main>
-    </div>
+    <main>
+      <Hero />
+      <AboutMe />
+      <Projects />
+      <Services />
+      <Contact />
+    </main>
   );
 }
 

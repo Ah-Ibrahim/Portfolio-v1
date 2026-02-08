@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Sofia_Sans_Condensed } from "next/font/google";
 import { Spline_Sans_Mono } from "next/font/google";
 import "./global.css";
+import NavBar from "@/shared/components/layout/navbar/NavBar";
+import Footer from "@/shared/components/layout/footer/Footer";
 import GsapProvider from "@/providers/GsapProvider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Ahmed Ibrahim",
@@ -30,9 +34,14 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
       </head>
       <body
-        className={`${sofiaSansCondensed.variable} ${splineSansMono.variable} ${splineSansMono.className}`}
+        className={`${sofiaSansCondensed.variable} ${splineSansMono.variable} ${splineSansMono.className} page`}
       >
         <GsapProvider />
+        <NavBar />
+        {children}
+        <Analytics />
+        <SpeedInsights />
+        <Footer />
       </body>
     </html>
   );
