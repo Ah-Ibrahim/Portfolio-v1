@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme inline {
+  --font-sofia: var(--font-sofia-sans-condensed);
+  --font-spline: var(--font-spline-sans-mono);
+}
