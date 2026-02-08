@@ -1,3 +1,4 @@
+import Hero from "@/features/hero/Hero";
 import NavBar from "@/shared/components/layout/NavBar";
 
 function page() {
@@ -5,6 +6,9 @@ function page() {
   return (
     <div className="page h-screen bg-white">
       <NavBar />
+      <main>
+        <Hero />
+      </main>
     </div>
   );
 }
