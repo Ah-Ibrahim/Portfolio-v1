@@ -31,7 +31,7 @@ function HamburgerMenu({
   return (
     <nav
       aria-label="Main navigation"
-      className="bg-white fixed inset-0 w-full h-full pt-19.5 flex flex-col pb-2 section-padding z-10"
+      className="bg-white fixed inset-0 w-full h-full pt-19.5 flex flex-col pb-2 section-padding z-10 lg:hidden"
       ref={container}
     >
       <div className="font-light text-xs text-right uppercase tracking-widest">

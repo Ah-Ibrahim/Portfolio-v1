@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import LinkList from "../common/LinkList";
 import ArrowIcon from "../ui/ArrowIcon";
 import { link } from "@/shared/lib/schemas/definitions";
@@ -30,8 +30,6 @@ const links: link[] = [
 
 function NavBar() {
   const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
-  // Desktop or larger
-  const isLg = useMediaQuery(`(min-width:${screenBreakpoints.lg})`);
 
   const handleCloseMenu = () => {
     setIsMenuShown(false);
@@ -46,6 +44,7 @@ function NavBar() {
       <header
         className="fixed w-full mix-blend-exclusion z-20"
         id="navbar-animation"
+        ref={container}
       >
         <nav className="flex justify-between section-padding py-6 items-center text-white *:uppercase">
           <a
@@ -55,40 +54,33 @@ function NavBar() {
           >
             Ahmed Ibrahim
           </a>
-          {isLg ? (
-            <>
-              <LinkList
-                links={links}
-                listStyle="flex justify-between gap-x-[4vw]"
-                linkStyle="font-light uppercase bracket-hover-animation"
-              />
-              <a
-                href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
-                target="_blank"
-                className="flex text-lg underline-animation group gap-x-2"
-              >
-                Contact me <ArrowIcon />
-              </a>
-            </>
-          ) : (
-            <button
-              className="font-light"
-              onClick={() => setIsMenuShown((prev) => !prev)}
-            >
-              {isMenuShown ? (
-                <span className="bracket-hover-animation">close</span>
-              ) : (
-                <span className="relative after:content-['+'] after:absolute after:bottom-1/2 after:text-xs">
-                  Menu
-                </span>
-              )}
-            </button>
-          )}
+          <LinkList
+            links={links}
+            listStyle="hidden lg:flex justify-between gap-x-[4vw]"
+            linkStyle="font-light uppercase bracket-hover-animation"
+          />
+          <a
+            href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
+            target="_blank"
+            className="hidden lg:flex text-lg underline-animation group gap-x-2"
+          >
+            Contact me <ArrowIcon />
+          </a>
+          <button
+            className="font-light lg:hidden"
+            onClick={() => setIsMenuShown((prev) => !prev)}
+          >
+            {isMenuShown ? (
+              <span className="bracket-hover-animation">close</span>
+            ) : (
+              <span className="relative after:content-['+'] after:absolute after:bottom-1/2 after:text-xs">
+                Menu
+              </span>
+            )}
+          </button>
         </nav>
       </header>
-      {!isLg && (
-        <HamburgerMenu onClose={handleCloseMenu} isMenuShown={isMenuShown} />
-      )}
+      <HamburgerMenu onClose={handleCloseMenu} isMenuShown={isMenuShown} />
     </>
   );
 }
