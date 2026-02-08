@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sofia_Sans_Condensed } from "next/font/google";
 import { Spline_Sans_Mono } from "next/font/google";
 import "./global.css";
+import GsapProvider from "@/providers/GsapProvider";
 
 export const metadata: Metadata = {
   title: "Ahmed Ibrahim",
@@ -31,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${sofiaSansCondensed.variable} ${splineSansMono.variable} ${splineSansMono.className}`}
       >
-        <div id="root">{children}</div>
+        <GsapProvider />
       </body>
     </html>
   );

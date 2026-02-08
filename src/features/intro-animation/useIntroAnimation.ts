@@ -8,8 +8,6 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import type { RefObject } from "react";
 
-gsap.registerPlugin(SplitText, useGSAP);
-
 function useIntroAnimation(container: RefObject<HTMLElement | null>) {
   const isSmallerThanMd = useMediaQuery(`(max-width:${screenBreakpoints.md})`);
 

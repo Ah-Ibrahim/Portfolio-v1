@@ -5,3 +5,13 @@ export function getNumeratedIndex(index: number): string {
 export function getNonNullElements(elements: (Element | null)[]) {
   return elements.filter((el): el is Element => Boolean(el));
 }
+
+export function debounce(func: Function, timeout: number) {
+  let timeoutId: number | undefined;
+
+  return () => {
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(func, timeout);
+  };
+}

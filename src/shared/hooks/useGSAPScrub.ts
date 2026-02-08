@@ -6,8 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 import type { RefObject } from "react";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
-
 const STAGGERS_EACH = 0.04;
 const SCRUB = 4;
 const START_DEFAULT = "top 75%";
