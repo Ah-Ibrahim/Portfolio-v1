@@ -1,7 +1,7 @@
 import useTime from "@/shared/hooks/useTime";
 import { link } from "@/shared/lib/schemas/definitions";
 import { useRef } from "react";
-import LinkList from "../common/LinkList";
+import LinkList from "../../common/LinkList";
 import { useHamburgerAnimation } from "./useHamburgerAnimations";
 
 const links: link[] = [

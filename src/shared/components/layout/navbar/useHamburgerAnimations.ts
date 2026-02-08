@@ -4,8 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, type RefObject } from "react";
 
-gsap.registerPlugin(useGSAP);
-
 export function useHamburgerAnimation(
   container: RefObject<HTMLElement | null>,
   isMenuShown: boolean,

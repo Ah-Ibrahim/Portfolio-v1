@@ -4,8 +4,6 @@ import { useGSAP } from "@gsap/react";
 import { RefObject } from "react";
 import gsap from "gsap";
 
-gsap.registerPlugin(useGSAP);
-
 function useNavBarAnimations(container: RefObject<HTMLElement | null>) {
   useGSAP(
     () => {

@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import LinkList from "../common/LinkList";
-import ArrowIcon from "../ui/ArrowIcon";
+import LinkList from "../../common/LinkList";
+import ArrowIcon from "../../ui/ArrowIcon";
 import { link } from "@/shared/lib/schemas/definitions";
 import useMediaQuery from "@/shared/hooks/useMediaQuery";
 import screenBreakpoints from "@/shared/lib/breakpoints";
