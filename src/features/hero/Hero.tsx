@@ -21,11 +21,11 @@ function Hero() {
         <div className="md:mt-6">
           <h1 className="text-[4rem] xs:text-[5.25rem] font-bold-condensed uppercase tracking-tighter lg:-tracking-[0.0975em] leading-[0.75] md:text-[13vw] md:whitespace-nowrap md:text-center lg:text-[14vw]">
             <div className="w-min max-md:text-right max-md:ms-auto md:mx-auto relative">
-              <div id="hero-animation" className="overflow-y-clip">
+              <div id="hero-animation" className="overflow-y-clip invisible">
                 Creative Developer
               </div>
               <div
-                className="text-[0.65rem] xs:text-[0.70rem] uppercase flex justify-between *:tracking-[1em] font-bold-condensed lg:w-1/3 lg:text-[0.8rem] xl:text-base absolute max-lg:left-0 right-0 top-full translate-x-3"
+                className="text-[0.65rem] xs:text-[0.70rem] uppercase flex justify-between *:tracking-[1em] font-bold-condensed lg:w-1/3 lg:text-[0.8rem] xl:text-base absolute max-lg:left-0 right-0 top-full translate-x-3 invisible"
                 id="location-animation"
               >
                 <span>Based</span>

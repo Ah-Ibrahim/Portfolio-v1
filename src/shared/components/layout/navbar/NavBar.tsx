@@ -42,7 +42,7 @@ function NavBar() {
   return (
     <>
       <header
-        className="fixed w-full mix-blend-exclusion z-20"
+        className="fixed w-full mix-blend-exclusion z-20 invisible"
         id="navbar-animation"
         ref={container}
       >
