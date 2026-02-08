@@ -7,6 +7,7 @@ import { link } from "@/shared/lib/schemas/definitions";
 import useMediaQuery from "@/shared/hooks/useMediaQuery";
 import screenBreakpoints from "@/shared/lib/breakpoints";
 import HamburgerMenu from "./HamburgerMenu";
+import useNavBarAnimations from "./useNavBarAnimations";
 
 const links: link[] = [
   {
@@ -35,6 +36,10 @@ function NavBar() {
   const handleCloseMenu = () => {
     setIsMenuShown(false);
   };
+
+  const container = useRef<HTMLElement>(null);
+
+  useNavBarAnimations(container);
 
   return (
     <>
