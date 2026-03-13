@@ -1,7 +1,7 @@
 [
   {
     "title": "Blankspace",
-    "description": "A modern collaborative workspace inspired by Notion. ",
+    "description": "A modern collaborative workspace inspired by Notion.",
     "imageLink": "/images/Blankspace.png",
     "previewLink": "https://blank-space-tau.vercel.app/",
     "colorTheme": "#37474F"
