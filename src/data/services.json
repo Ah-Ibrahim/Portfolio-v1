@@ -8,13 +8,19 @@
   {
     "title": "UI/UX Implementation",
     "description": "I turn Figma designs into polished, accurate interfaces with consistent styling and attention to visual detail.",
-    "imageLink": "/images/Marketing_Landing_Page.jpg",
+    "imageLink": "/images/wireframe.png",
     "keywords": ["Figma to React", "Pixel-Perfect UI"]
+  },
+  {
+    "title": "Full-Stack Integration",
+    "description": "Integrate frontend applications with APIs, authentication systems, and databases for complete product functionality.",
+    "imageLink": "/images/Blankspace.png",
+    "keywords": ["Authentication", "RESTs API", "Database"]
   },
   {
     "title": "Responsive Web Development",
     "description": "I create layouts that adapt naturally to any device, ensuring everything looks and feels right on every screen size.",
-    "imageLink": "/images/Desserts_Shop.jpg",
+    "imageLink": "/images/E-Commerce_Page.jpg",
     "keywords": [
       "Mobile-First Approach",
       "Adaptive Design",
@@ -30,11 +36,5 @@
       "Efficient Rendering",
       "Lighthouse improvements"
     ]
-  },
-  {
-    "title": "API Integration",
-    "description": "I connect apps to real data with clean, reliable API handling, including loading states, errors, and updates.",
-    "imageLink": "/images/E-Commerce_Page.jpg",
-    "keywords": ["RESTs API", "React Query", "Data Fetching"]
   }
 ]

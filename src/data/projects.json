@@ -1,5 +1,12 @@
 [
   {
+    "title": "Blankspace",
+    "description": "A modern collaborative workspace inspired by Notion. ",
+    "imageLink": "/images/Blankspace.png",
+    "previewLink": "https://blank-space-tau.vercel.app/",
+    "colorTheme": "#37474F"
+  },
+  {
     "title": "E-commerce page",
     "description": "A responsive E-Commerce ordering website with a smooth shopping experience, responsive with custom Lightbox, animations and fully responsive. ",
     "imageLink": "/images/E-Commerce_Page.jpg",
@@ -12,12 +19,5 @@
     "imageLink": "/images/Marketing_Landing_Page.jpg",
     "previewLink": "https://ah-ibrahim.github.io/Marketing-landing-page/",
     "colorTheme": "#4438ca"
-  },
-  {
-    "title": "Desserts Shop",
-    "description": "A responsive dessert ordering website with a smooth shopping experience and performance optimizations.",
-    "imageLink": "/images/Desserts_Shop.jpg",
-    "previewLink": "https://ah-ibrahim.github.io/Desserts-list-with-cart/",
-    "colorTheme": "#c73a0f"
   }
 ]
