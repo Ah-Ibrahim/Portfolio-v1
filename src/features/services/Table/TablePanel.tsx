@@ -51,9 +51,10 @@ function TablePanel({
         </ul>
         <figure className="flex-1 invisible panel-image-animation">
           <LazyLoadImage
-            className="w-full"
+            className="w-full h-full object-cover block"
             src={imageLink}
             alt={title}
+            wrapperClassName="block!"
             effect="blur"
           />
         </figure>
