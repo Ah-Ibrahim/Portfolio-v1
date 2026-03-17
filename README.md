@@ -8,6 +8,7 @@ A highly animated, performance-optimized portfolio built to showcase modern fron
 <summary>Demo</summary>
 <img src="./designs/Preview.gif" alt="Portfolio gif"/>
 </details>
+
 [Live Preview](https://ah-ibrahim.vercel.app/)
 
 ---
