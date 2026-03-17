@@ -4,6 +4,10 @@ A highly animated, performance-optimized portfolio built to showcase modern fron
 
 ![Project Screenshot](./designs/Preview.png)
 
+<details open>
+<summary>Demo</summary>
+<img src="./designs/Preview.gif" alt="Portfolio gif"/>
+</details>
 [Live Preview](https://ah-ibrahim.vercel.app/)
 
 ---
