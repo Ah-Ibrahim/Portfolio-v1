@@ -2,14 +2,14 @@
   {
     "title": "Blankspace",
     "description": "A modern collaborative workspace inspired by Notion.",
-    "imageLink": "/images/Blankspace.gif",
+    "imageLink": "/images/Blankspace.webp",
     "previewLink": "https://blank-space-tau.vercel.app/",
     "colorTheme": "#37474F"
   },
   {
     "title": "E-commerce page",
     "description": "A responsive E-Commerce ordering website with a smooth shopping experience, responsive with custom Lightbox, animations and fully responsive. ",
-    "imageLink": "/images/Ecommerce.gif",
+    "imageLink": "/images/Ecommerce.webp",
     "previewLink": "https://ah-ibrahim.github.io/Ecommerce-product-page/",
     "colorTheme": "#ff7d1a"
   },
