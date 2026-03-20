@@ -25,6 +25,7 @@ function GsapSetup() {
     return () => {
       window.removeEventListener("resize", onResizeDebounced);
       window.removeEventListener("orientationchange", onResizeDebounced);
+      onResizeDebounced.cancel();
     };
   }, [onResizeDebounced]);
 
