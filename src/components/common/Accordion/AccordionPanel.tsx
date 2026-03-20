@@ -66,10 +66,10 @@ function AccordionPanel({
             } `}
           >
             <LazyLoadImage
-              className="w-full"
+              className="w-full aspect-video"
               src={imageLink}
               alt={title}
-              effect="blur"
+              wrapperClassName="w-full "
             />
           </figure>
         </div>
