@@ -2,6 +2,7 @@ import type { PanelData } from "@/lib/schemas/definitions";
 import { getNumeratedIndex } from "@/lib/utils/common";
 import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import ArrowIcon from "../../ui/ArrowIcon";
 import { useAccordionPanelAnimations } from "./useAccordionPanelAnimations";
 
@@ -69,6 +70,10 @@ function AccordionPanel({
               src={imageLink}
               alt={title}
               wrapperClassName="w-full "
+              effect="blur"
+              wrapperProps={{
+                style: { transitionDelay: "1s" },
+              }}
             />
           </figure>
         </div>
