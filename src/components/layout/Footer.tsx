@@ -34,7 +34,7 @@ function Footer() {
     scrubContainer,
     startScrub,
     endScrub,
-    true
+    true,
   );
 
   return (
@@ -70,7 +70,7 @@ function Footer() {
           </div>
         </Activity>
         <div className="text-xs xs:text-sm text-center text-text-secondary">
-          &copy; All Rights Reserved. 2025 AhmedIbrahim
+          &copy; All Rights Reserved. 2026 AhmedIbrahim
         </div>
       </div>
     </footer>

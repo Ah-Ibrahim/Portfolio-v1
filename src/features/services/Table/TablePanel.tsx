@@ -54,7 +54,6 @@ function TablePanel({
             className="w-full h-full object-cover block"
             src={imageLink}
             alt={title}
-            wrapperClassName="block!"
             effect="blur"
           />
         </figure>
