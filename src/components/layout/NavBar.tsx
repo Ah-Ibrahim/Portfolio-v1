@@ -56,11 +56,11 @@ function NavBar() {
                 linkStyle="font-light uppercase bracket-hover-animation"
               />
               <a
-                href="mailto:ahmed.ibrahim.elsayed01@gmail.com"
-                target="_blank"
+                href="/files/Ahmed-Ibrahim-Resume.pdf"
                 className="flex text-lg underline-animation group gap-x-2"
+                target="_blank"
               >
-                Contact me <ArrowIcon />
+                My Resume <ArrowIcon />
               </a>
             </>
           ) : (
