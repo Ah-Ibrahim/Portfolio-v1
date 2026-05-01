@@ -21,6 +21,8 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
     (_context, contextSafe) => {
       if (!element.current || !container.current) return;
 
+      let cancelled = false;
+
       const setupTextScrubAnimation = contextSafe!(() => {
         let split = SplitText.create(element.current, {
           type: "chars",
@@ -55,8 +57,13 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
       });
 
       document.fonts.ready.then(() => {
+        if (cancelled) return;
         setupTextScrubAnimation();
       });
+
+      return () => {
+        cancelled = true;
+      };
     },
     {
       scope: container,
