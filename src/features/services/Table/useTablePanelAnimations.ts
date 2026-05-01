@@ -3,7 +3,7 @@ import gsap from "gsap";
 import type { RefObject } from "react";
 
 export function useTablePanelAnimations(
-  container: RefObject<HTMLDivElement | null>
+  container: RefObject<HTMLDivElement | null>,
 ) {
   useGSAP(
     (_context, contextSafe) => {
@@ -51,7 +51,7 @@ export function useTablePanelAnimations(
           },
           duration: 0.5,
         },
-        "<"
+        "<",
       );
 
       timeline.from(
@@ -60,7 +60,7 @@ export function useTablePanelAnimations(
           autoAlpha: 0,
           duration: 1,
         },
-        "-=20%"
+        "-=20%",
       );
 
       return () => {
@@ -68,6 +68,6 @@ export function useTablePanelAnimations(
         containerElement.removeEventListener("mouseleave", onMouseLeave);
       };
     },
-    { scope: container }
+    { scope: container },
   );
 }
