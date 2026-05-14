@@ -15,17 +15,16 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
   start: string = START_DEFAULT,
   end: string = END_DEFAULT,
   isReversed: boolean = false,
-  showMarkers: boolean = false
+  showMarkers: boolean = false,
 ) {
   useGSAP(
-    () => {
+    (_context, contextSafe) => {
       if (!element.current || !container.current) return;
 
-      let split: globalThis.SplitText | null = null;
-      let tween: gsap.core.Tween | null = null;
+      let cancelled = false;
 
-      document.fonts.ready.then(() => {
-        split = SplitText.create(element.current, {
+      const setupTextScrubAnimation = contextSafe!(() => {
+        let split = SplitText.create(element.current, {
           type: "chars",
           autoSplit: true,
         });
@@ -36,7 +35,7 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
           autoAlpha: 1,
         });
 
-        tween = gsap.from(split.chars, {
+        gsap.from(split.chars, {
           y: sign + "110%",
           stagger: {
             from: "center",
@@ -57,16 +56,20 @@ function useGSAPScrub<T extends HTMLElement, K extends HTMLElement>(
         });
       });
 
+      document.fonts.ready.then(() => {
+        if (cancelled) return;
+        setupTextScrubAnimation();
+      });
+
       return () => {
-        tween?.revert();
-        split?.revert();
-        tween?.scrollTrigger?.kill();
+        cancelled = true;
       };
     },
     {
       scope: container,
       dependencies: [start, end, isReversed],
-    }
+      revertOnUpdate: true,
+    },
   );
 }
 

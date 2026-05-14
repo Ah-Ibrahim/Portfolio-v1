@@ -19,19 +19,19 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
       // Hero section
       const heading = containerElement.querySelector("#hero-animation");
       const locationText = containerElement.querySelector(
-        "#location-animation"
+        "#location-animation",
       );
       const introContainer = containerElement.querySelector("#intro-animation");
       const introDescription = containerElement.querySelector(
-        "#intro-desc-animation"
+        "#intro-desc-animation",
       );
       const keywords = containerElement.querySelectorAll(".keywords-animation");
       const imageContainer = containerElement.querySelector(
-        "#image-container-animation"
+        "#image-container-animation",
       );
       const image = containerElement.querySelector("#image-animation");
       const collaboration = containerElement.querySelector(
-        "#collaboration-animation"
+        "#collaboration-animation",
       );
 
       const timeline = gsap.timeline({ id: "Hero" });
@@ -62,7 +62,7 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
             autoAlpha: 0,
             duration: 1,
           },
-          "<35%"
+          "<35%",
         )
         .addLabel("intro-text", ">");
 
@@ -75,7 +75,7 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
           },
           duration: 0.65,
         },
-        "intro-text"
+        "intro-text",
       );
 
       timeline.fromTo(
@@ -85,7 +85,7 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
           height: 0,
         },
         { duration: 1, autoAlpha: 1, height: "auto" },
-        "intro-text"
+        "intro-text",
       );
 
       timeline.from(
@@ -96,20 +96,15 @@ function useIntroAnimation(container: RefObject<HTMLElement | null>) {
           duration: 1,
           ease: "power3.out",
         },
-        "intro-text"
+        "intro-text",
       );
 
       timeline.from([navbar, collaboration], {
         delay: 0,
         autoAlpha: 0,
       });
-
-      return () => {
-        timeline?.revert();
-        splitHeading?.revert();
-      };
     },
-    { scope: container, dependencies: [isSmallerThanMd], revertOnUpdate: true }
+    { scope: container, dependencies: [isSmallerThanMd], revertOnUpdate: true },
   );
 }
 
